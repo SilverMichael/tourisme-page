@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Destinations — Maroa Voyages</title>
+<meta name="description" content="Douze lieux à Madagascar, par région et par saison : baobabs, tsingy, Isalo, Nosy Be, Pangalanes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="logo" href="index.html">
+    <span class="logo__mark" aria-hidden="true">M</span>
+    <span class="logo__word">Maroa<span class="logo__dot">.</span></span>
+  </a>
+  <button class="burger" type="button" data-burger aria-controls="site-nav" aria-expanded="false" aria-label="Ouvrir le menu">≡</button>
+  <nav class="site-nav" id="site-nav" data-nav aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="destinations.html" aria-current="page">Destinations</a>
+      <a href="circuits.html">Circuits</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+    <button class="site-nav__search" type="button" aria-label="Rechercher">⌕</button>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="media">
+    <span class="media__ph">Côte ou hauts plateaux — photo large</span>
+    <img src="assets/dest-hero.jpg" alt="Panorama des hauts plateaux malgaches" fetchpriority="high">
+  </div>
+  <div class="page-hero__veil" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow"><span>12 lieux · 6 régions</span></p>
+    <h1 class="h1">Destinations</h1>
+    <p class="lead">Du sable blanc du nord aux canyons du sud, voici les lieux où nous emmenons nos voyageurs — avec la saison qui leur va le mieux.</p>
+  </div>
+</section>
+
+<section class="filters" data-filters aria-label="Filtrer par zone">
+  <div class="wrap">
+      <button class="pill" type="button" data-zone="Toutes" aria-pressed="true">Toutes</button>
+      <button class="pill" type="button" data-zone="Nord" aria-pressed="false">Nord</button>
+      <button class="pill" type="button" data-zone="Ouest" aria-pressed="false">Ouest</button>
+      <button class="pill" type="button" data-zone="Sud" aria-pressed="false">Sud</button>
+      <button class="pill" type="button" data-zone="Est" aria-pressed="false">Est</button>
+      <button class="pill" type="button" data-zone="Hauts plateaux" aria-pressed="false">Hauts plateaux</button>
+    <span class="filters__count" data-count role="status" aria-live="polite">12 lieux</span>
+  </div>
+</section>
+
+<section class="section section--ink" style="padding-top:clamp(36px,5vw,72px);padding-bottom:clamp(56px,9vw,110px)">
+  <div class="wrap places">
+      <a class="place-card" href="circuits.html" data-place data-zone="Ouest">
+        <div class="media">
+          <span class="media__ph">Allée des Baobabs</span>
+          <img src="assets/place-baobabs.jpg" alt="Allée des Baobabs, Menabe" loading="lazy">
+          <span class="place-card__badge">Menabe</span>
+        </div>
+        <div class="place-card__body">
+          <h3 class="h3">Allée des Baobabs</h3>
+          <p>Vingt-cinq géants alignés sur la piste de Morondava. On y arrive pour la lumière de fin de journée.</p>
+          <div class="place-card__foot">
+            <span>Avr — Nov</span>
+            <span class="place-card__days">2 jours</span>
+          </div>
+        </div>
+      </a>
+      <a class="place-card" href="circuits.html" data-place data-zone="Ouest">
+        <div class="media">
+          <span class="media__ph">Tsingy de Bemaraha</span>
+          <img src="assets/place-tsingy.jpg" alt="Tsingy de Bemaraha, Melaky" loading="lazy">
+          <span class="place-card__badge">Melaky</span>
+        </div>
+        <div class="place-card__body">
+          <h3 class="h3">Tsingy de Bemaraha</h3>
+          <p>Un labyrinthe de calcaire coupant, passerelles et via ferrata. Patrimoine mondial.</p>
+          <div class="place-card__foot">
+            <span>Mai — Oct</span>
+            <span class="place-card__days">3 jours</span>
+          </div>
+        </div>
+      </a>
+      <a class="place-card" href="circuits.html" data-place data-zone="Sud">
+        <div class="media">
+          <span class="media__ph">Massif de l’Isalo</span>
+          <img src="assets/place-isalo.jpg" alt="Massif de l’Isalo, Ihorombe" loading="lazy">
+          <span class="place-card__badge">Ihorombe</span>
+        </div>
+        <div class="place-card__body">
+          <h3 class="h3">Massif de l’Isalo</h3>
+          <p>Canyons de grès, piscines naturelles et bivouac sous les étoiles au bord du plateau.</p>
+          <div class="place-card__foot">
+            <span>Avr — Oct</span>
+            <span class="place-card__days">3 jours</span>
+          </div>
+        </div>
+      </a>
+      <a class="place-card" href="circuits.html" data-place data-zone="Nord">
+        <div class="media">
+          <span class="media__ph">Nosy Iranja</span>
+          <img src="assets/place-nosyiranja.jpg" alt="Nosy Iranja, Diana" loading="lazy">
+          <span class="place-card__badge">Diana</span>
+        </div>
+        <div class="place-card__body">
+          <h3 class="h3">Nosy Iranja</h3>
+          <p>Deux îlots reliés par un banc de sable blanc à marée basse. Tortues et snorkeling.</p>
+          <div class="place-card__foot">
+            <span>Mai — Nov</span>
+            <span class="place-card__days">1 jour</span>
+          </div>
+        </div>
+      </a>
+      <a class="place-card" href="circuits.html" data-place data-zone="Nord">
+        <div class="media">
+          <span class="media__ph">Nosy Be</span>
+          <img src="assets/place-nosybe.jpg" alt="Nosy Be, Diana" loading="lazy">
+          <span class="place-card__badge">Diana</span>
+        </div>
+        <div class="place-card__body">
+          <h3 class="h3">Nosy Be</h3>
+          <p>Le camp de base du nord : marché de Hell-Ville, plantations d’ylang-ylang, récifs.</p>
+          <div class="place-card__foot">
+            <span>Toute l’année</span>
+            <span class="place-card__days">4 jours</span>
+          </div>
+        </div>
+      </a>
+      <a class="place-card" href="circuits.html" data-place data-zone="Est">
+        <div class="media">
+          <span class="media__ph">Île Sainte-Marie</span>
+          <img src="assets/place-saintemarie.jpg" alt="Île Sainte-Marie, Analanjirofo" loading="lazy">
+          <span class="place-card__badge">Analanjirofo</span>
+        </div>
+        <div class="place-card__body">
+          <h3 class="h3">Île Sainte-Marie</h3>
+          <p>Baie des baleines, cimetière des pirates et une seule route bordée de cocotiers.</p>
+          <div class="place-card__foot">
+            <span>Juil — Sep</span>
+            <span class="place-card__days">4 jours</span>
+          </div>
+        </div>
+      </a>
+      <a class="place-card" href="circuits.html" data-place data-zone="Hauts plateaux">
+        <div class="media">
+          <span class="media__ph">Ranomafana</span>
+          <img src="assets/place-ranomafana.jpg" alt="Ranomafana, Haute Matsiatra" loading="lazy">
+          <span class="place-card__badge">Haute Matsiatra</span>
+        </div>
+        <div class="place-card__body">
+          <h3 class="h3">Ranomafana</h3>
+          <p>Forêt pluviale dense, sources chaudes et douze espèces de lémuriens à repérer de nuit.</p>
+          <div class="place-card__foot">
+            <span>Avr — Nov</span>
+            <span class="place-card__days">2 jours</span>
+          </div>
+        </div>
+      </a>
+      <a class="place-card" href="circuits.html" data-place data-zone="Est">
+        <div class="media">
+          <span class="media__ph">Canal des Pangalanes</span>
+          <img src="assets/place-pangalanes.jpg" alt="Canal des Pangalanes, Atsinanana" loading="lazy">
+          <span class="place-card__badge">Atsinanana</span>
+        </div>
+        <div class="place-card__body">
+          <h3 class="h3">Canal des Pangalanes</h3>
+          <p>Six cents kilomètres de lagunes reliées. Navigation lente entre villages de pêcheurs.</p>
+          <div class="place-card__foot">
+            <span>Avr — Nov</span>
+            <span class="place-card__days">3 jours</span>
+          </div>
+        </div>
+      </a>
+      <a class="place-card" href="circuits.html" data-place data-zone="Hauts plateaux">
+        <div class="media">
+          <span class="media__ph">Andringitra</span>
+          <img src="assets/place-andringitra.jpg" alt="Andringitra, Haute Matsiatra" loading="lazy">
+          <span class="place-card__badge">Haute Matsiatra</span>
+        </div>
+        <div class="place-card__body">
+          <h3 class="h3">Andringitra</h3>
+          <p>Le trek du Pic Boby, 2 658 m : granit, troupeaux zébus et nuits à 5 °C.</p>
+          <div class="place-card__foot">
+            <span>Mai — Oct</span>
+            <span class="place-card__days">4 jours</span>
+          </div>
+        </div>
+      </a>
+      <a class="place-card" href="circuits.html" data-place data-zone="Hauts plateaux">
+        <div class="media">
+          <span class="media__ph">Réserve d’Anja</span>
+          <img src="assets/place-anja.jpg" alt="Réserve d’Anja, Haute Matsiatra" loading="lazy">
+          <span class="place-card__badge">Haute Matsiatra</span>
+        </div>
+        <div class="place-card__body">
+          <h3 class="h3">Réserve d’Anja</h3>
+          <p>Réserve gérée par le village. Makis catta entre les blocs de granit, à portée d’objectif.</p>
+          <div class="place-card__foot">
+            <span>Toute l’année</span>
+            <span class="place-card__days">½ journée</span>
+          </div>
+        </div>
+      </a>
+      <a class="place-card" href="circuits.html" data-place data-zone="Sud">
+        <div class="media">
+          <span class="media__ph">Ifaty &amp; Mangily</span>
+          <img src="assets/place-ifaty.jpg" alt="Ifaty &amp; Mangily, Atsimo-Andrefana" loading="lazy">
+          <span class="place-card__badge">Atsimo-Andrefana</span>
+        </div>
+        <div class="place-card__body">
+          <h3 class="h3">Ifaty &amp; Mangily</h3>
+          <p>Forêt d’épineux, baobabs nains et le troisième plus grand récif corallien du monde.</p>
+          <div class="place-card__foot">
+            <span>Avr — Nov</span>
+            <span class="place-card__days">3 jours</span>
+          </div>
+        </div>
+      </a>
+      <a class="place-card" href="circuits.html" data-place data-zone="Nord">
+        <div class="media">
+          <span class="media__ph">Baie de Diego-Suarez</span>
+          <img src="assets/place-diego.jpg" alt="Baie de Diego-Suarez, Diana" loading="lazy">
+          <span class="place-card__badge">Diana</span>
+        </div>
+        <div class="place-card__body">
+          <h3 class="h3">Baie de Diego-Suarez</h3>
+          <p>Kitesurf dans la baie de Sakalava, tsingy rouges et mer d’Émeraude en boutre.</p>
+          <div class="place-card__foot">
+            <span>Mai — Nov</span>
+            <span class="place-card__days">3 jours</span>
+          </div>
+        </div>
+      </a>
+  </div>
+</section>
+
+<section class="section section--bone">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--dark"><span>Quand partir</span></p>
+    <h2 class="h2" style="margin-bottom:clamp(28px,4vw,48px)">L’année en quatre saisons</h2>
+    <div class="grid-cards" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(16px,2vw,24px)">
+        <div class="card-light">
+          <div class="card-light__period">Avr — Juin</div>
+          <h3 class="h3">Vert et calme</h3>
+          <p>Fin des pluies, paysages saturés, pistes praticables. La meilleure période pour l’ouest.</p>
+        </div>
+        <div class="card-light">
+          <div class="card-light__period">Juil — Août</div>
+          <h3 class="h3">Baleines</h3>
+          <p>Les baleines à bosse passent à Sainte-Marie. Nuits fraîches sur les hauts plateaux.</p>
+        </div>
+        <div class="card-light">
+          <div class="card-light__period">Sep — Nov</div>
+          <h3 class="h3">Lémuriens</h3>
+          <p>Naissances dans les parcs, jacarandas en fleur, mer d’huile dans le nord.</p>
+        </div>
+        <div class="card-light">
+          <div class="card-light__period">Déc — Mar</div>
+          <h3 class="h3">Saison humide</h3>
+          <p>Certaines pistes ferment. On se concentre sur le nord et les côtes abritées.</p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Une destination vous appelle ? On construit l’itinéraire autour.</h2>
+    <a class="btn btn--ghost" href="contact.html">Nous écrire</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="logo__word">Maroa<span class="logo__dot">.</span></span>
+    <nav aria-label="Navigation de pied de page">
+      <a href="index.html">Accueil</a>
+      <a href="circuits.html">Circuits</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <span class="site-footer__copy">© 2026 Maroa Voyages — Antananarivo</span>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

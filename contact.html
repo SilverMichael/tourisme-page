@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Maroa Voyages</title>
+<meta name="description" content="Écrivez-nous : réponse sous 48 h avec une première proposition d’itinéraire, sans engagement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="logo" href="index.html">
+    <span class="logo__mark" aria-hidden="true">M</span>
+    <span class="logo__word">Maroa<span class="logo__dot">.</span></span>
+  </a>
+  <button class="burger" type="button" data-burger aria-controls="site-nav" aria-expanded="false" aria-label="Ouvrir le menu">≡</button>
+  <nav class="site-nav" id="site-nav" data-nav aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="circuits.html">Circuits</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    <button class="site-nav__search" type="button" aria-label="Rechercher">⌕</button>
+  </nav>
+</header>
+
+<section class="contact">
+  <div class="media">
+    <span class="media__ph">Lagon ou piste au crépuscule</span>
+    <img src="assets/contact-bg.jpg" alt="" fetchpriority="high">
+  </div>
+  <div class="contact__veil" aria-hidden="true"></div>
+
+  <div class="wrap grid-2 grid-2--start" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,5vw,72px)">
+    <div>
+      <p class="eyebrow"><span>Réponse sous 48 h</span></p>
+      <h1 class="h1" style="max-width:16ch;font-size:clamp(34px,5vw,72px)">Dites-nous quand vous partez</h1>
+      <p class="lead" style="max-width:48ch">Hanta lit chaque message et répond avec une première proposition d’itinéraire, sans engagement et sans relance commerciale.</p>
+
+      <div class="info">
+          <div class="info__row">
+            <span class="info__label">Téléphone</span>
+            <span class="info__value">+261 34 12 345 67 — WhatsApp</span>
+          </div>
+          <div class="info__row">
+            <span class="info__label">E-mail</span>
+            <span class="info__value">bonjour@maroa.mg</span>
+          </div>
+          <div class="info__row">
+            <span class="info__label">Bureau</span>
+            <span class="info__value">Lot II M 74, Antananarivo 101<br><small>Lun — Ven, 8 h — 17 h (UTC+3)</small></span>
+          </div>
+          <div class="info__row">
+            <span class="info__label">Antenne</span>
+            <span class="info__value">Hell-Ville, Nosy Be — sur rendez-vous</span>
+          </div>
+      </div>
+    </div>
+
+    <form class="form" data-form novalidate>
+      <div class="form__row">
+        <label class="field">
+          <span>Nom</span>
+          <input type="text" name="nom" placeholder="Claire Dubois" required>
+        </label>
+        <label class="field">
+          <span>E-mail</span>
+          <input type="email" name="email" placeholder="claire@exemple.fr" required>
+        </label>
+      </div>
+
+      <div class="field field--pills">
+        <span id="topic-label">Ce qui vous intéresse</span>
+        <div class="pills" data-topics role="group" aria-labelledby="topic-label">
+              <button class="pill" type="button" aria-pressed="true">Un circuit existant</button>
+              <button class="pill" type="button" aria-pressed="false">Voyage sur mesure</button>
+              <button class="pill" type="button" aria-pressed="false">Voyage de noces</button>
+              <button class="pill" type="button" aria-pressed="false">Groupe / famille</button>
+        </div>
+        <input type="hidden" name="sujet" value="Un circuit existant" data-topic-value>
+      </div>
+
+      <div class="form__row">
+        <label class="field">
+          <span>Dates envisagées</span>
+          <input type="text" name="dates" placeholder="Fin juillet, 2 semaines">
+        </label>
+        <label class="field">
+          <span>Voyageurs</span>
+          <input type="text" name="voyageurs" placeholder="2 adultes, 1 enfant">
+        </label>
+      </div>
+
+      <label class="field">
+        <span>Votre message</span>
+        <textarea rows="4" name="message" placeholder="Envies, rythme souhaité, contraintes…"></textarea>
+      </label>
+
+      <button class="form__submit" type="submit">Envoyer ma demande</button>
+      <p class="form__note" data-form-note>Vos coordonnées ne servent qu’à vous répondre. Aucune newsletter.</p>
+    </form>
+  </div>
+</section>
+
+<section class="section section--bone">
+  <div class="wrap grid-2 grid-2--start" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(32px,5vw,72px)">
+    <div>
+      <p class="eyebrow eyebrow--dark"><span>Questions fréquentes</span></p>
+      <h2 class="h2" style="max-width:18ch">Avant de nous écrire</h2>
+      <p class="lead" style="max-width:44ch;font-size:16px">Si votre question n’est pas là, posez-la : on préfère une réponse précise à une brochure.</p>
+    </div>
+    <div class="faq" data-faq>
+          <div class="faq__item is-open">
+            <button class="faq__q" type="button" id="faq-q0" aria-expanded="true" aria-controls="faq-a0">
+              Faut-il un visa ?
+              <span class="faq__sign" aria-hidden="true">−</span>
+            </button>
+            <div class="faq__a" id="faq-a0" role="region" aria-labelledby="faq-q0">
+              <div><p>Oui, délivré à l’arrivée à Ivato contre 37 € et un passeport valable six mois après le retour. Nous envoyons la liste complète des papiers avec le devis.</p></div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" type="button" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
+              Quel budget prévoir en plus du circuit ?
+              <span class="faq__sign" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1">
+              <div><p>Comptez le vol international, l’assurance, les boissons et vos achats. Sur place, nos circuits sont en pension complète : 15 à 20 € par jour suffisent largement.</p></div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" type="button" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
+              Est-ce adapté aux enfants ?
+              <span class="faq__sign" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__a" id="faq-a2" role="region" aria-labelledby="faq-q2">
+              <div><p>Le circuit nord se fait très bien dès six ans. Les treks de l’Andringitra et de l’Isalo demandent une bonne habitude de la marche.</p></div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" type="button" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
+              Combien de temps à l’avance réserver ?
+              <span class="faq__sign" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3">
+              <div><p>Trois à quatre mois pour juillet-août, six semaines le reste de l’année. Les vols intérieurs sont la vraie contrainte.</p></div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__q" type="button" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
+              Et si je veux partir seul ?
+              <span class="faq__sign" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4">
+              <div><p>C’est possible sur tous les circuits, avec un supplément chambre individuelle. Nous pouvons aussi vous proposer un départ groupé existant.</p></div>
+            </div>
+          </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="logo__word">Maroa<span class="logo__dot">.</span></span>
+    <nav aria-label="Navigation de pied de page">
+      <a href="index.html">Accueil</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="circuits.html">Circuits</a>
+      <a href="a-propos.html">À propos</a>
+    </nav>
+    <span class="site-footer__copy">© 2026 Maroa Voyages — Antananarivo</span>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

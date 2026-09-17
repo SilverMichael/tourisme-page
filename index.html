@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maroa Voyages — Madagascar, écrit par ceux qui vivent ici</title>
+<meta name="description" content="Agence locale à Antananarivo. Circuits guidés à Madagascar, six voyageurs maximum, itinéraires construits avec vous.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     HERO CARROUSEL
+     Les 5 couches sont montées en même temps : l'inactive attend
+     déjà en scale(1.3), d'où le zoom quand elle devient active.
+     ============================================================ -->
+<section class="hero" data-hero data-autoplay="false" data-delay="7000" aria-roledescription="carrousel" aria-label="Destinations à la une">
+
+  <div class="hero__layers">
+    <div class="hero__layer is-active" data-slide
+         data-name="Allée des Baobabs"
+         data-region="Menabe · Morondava"
+         data-l1="Marcher" data-l2="sous les" data-l3="géants"
+         data-text="Vingt-cinq baobabs centenaires bordent la piste de terre rouge. Arrivez une heure avant le coucher du soleil : la lumière fait le reste.">
+      <span class="media">
+        <span class="media__ph">Allée des Baobabs — photo plein écran</span>
+        <img src="assets/thumb-baobabs.webp" alt="Allée des Baobabs au coucher du soleil, près de Morondava" fetchpriority="high">
+      </span>
+    </div>
+
+    <div class="hero__layer" data-slide
+         data-name="Tsingy de Bemaraha"
+         data-region="Melaky · Bemaraha"
+         data-l1="Une forêt" data-l2="de pierre" data-l3="coupante"
+         data-text="Passerelles suspendues, canyons calcaires et lémuriens invisibles. Deux jours de randonnée dans un labyrinthe classé au patrimoine mondial.">
+      <span class="media">
+        <span class="media__ph">Tsingy de Bemaraha — photo plein écran</span>
+        <img src="assets/thumb-tsingy.jpg" alt="Aiguilles calcaires des Tsingy de Bemaraha">
+      </span>
+    </div>
+
+    <div class="hero__layer" data-slide
+         data-name="Nosy Iranja"
+         data-region="Diana · Nosy Be"
+         data-l1="Deux îles" data-l2="un banc" data-l3="de sable"
+         data-text="Une langue de sable blanc relie les deux îlots à marée basse. Pirogue au départ de Nosy Be, masque et tuba dans le sac.">
+      <span class="media">
+        <span class="media__ph">Nosy Iranja — photo plein écran</span>
+        <img src="assets/thumb-nosyiranja.jpg" alt="Banc de sable reliant les deux îlots de Nosy Iranja">
+      </span>
+    </div>
+
+    <div class="hero__layer" data-slide
+         data-name="Massif de l’Isalo"
+         data-region="Ihorombe · Ranohira"
+         data-l1="Des canyons" data-l2="et des" data-l3="piscines"
+         data-text="Grès sculpté par le vent, piscines naturelles turquoise et nuits sous les étoiles au cœur du parc national de l’Isalo.">
+      <span class="media">
+        <span class="media__ph">Massif de l’Isalo — photo plein écran</span>
+        <img src="assets/thumb-isalo.jpg" alt="Canyons de grès du massif de l’Isalo">
+      </span>
+    </div>
+
+    <div class="hero__layer" data-slide
+         data-name="Canal des Pangalanes"
+         data-region="Atsinanana · Toamasina"
+         data-l1="Six cents" data-l2="kilomètres" data-l3="d’eau calme"
+         data-text="Un chapelet de lagunes relié par un canal colonial. On y navigue lentement, de village de pêcheurs en forêt littorale.">
+      <span class="media">
+        <span class="media__ph">Canal des Pangalanes — photo plein écran</span>
+        <img src="assets/thumb-pangalanes.jpg" alt="Pirogue sur le canal des Pangalanes">
+      </span>
+    </div>
+  </div>
+
+  <div class="hero__veil hero__veil--side" aria-hidden="true"></div>
+  <div class="hero__veil hero__veil--edges" aria-hidden="true"></div>
+
+  <header class="site-header site-header--over">
+    <a class="logo" href="index.html">
+      <span class="logo__mark" aria-hidden="true">M</span>
+      <span class="logo__word">Maroa<span class="logo__dot">.</span></span>
+    </a>
+    <button class="burger" type="button" data-burger aria-controls="site-nav" aria-expanded="false" aria-label="Ouvrir le menu">≡</button>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Navigation principale">
+      <a href="index.html" aria-current="page">Accueil</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="circuits.html">Circuits</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+      <button class="site-nav__search" type="button" aria-label="Rechercher">⌕</button>
+    </nav>
+  </header>
+
+  <div class="hero__body">
+    <div class="hero__copy" data-hero-copy>
+      <p class="eyebrow"><span data-hero-region>Menabe · Morondava</span></p>
+      <h1 class="hero__title">
+        <span data-hero-l1>Marcher</span>
+        <span class="is-accent" data-hero-l2>sous les</span>
+        <span data-hero-l3>géants</span>
+      </h1>
+      <p class="hero__text" data-hero-text>Vingt-cinq baobabs centenaires bordent la piste de terre rouge. Arrivez une heure avant le coucher du soleil : la lumière fait le reste.</p>
+      <a class="btn btn--ghost hero__cta" href="circuits.html">Découvrir le circuit</a>
+    </div>
+
+    <div class="hero__bar">
+      <div class="hero__controls">
+        <div class="hero__arrows">
+          <button class="hero__arrow" type="button" data-hero-prev aria-label="Destination précédente">‹</button>
+          <button class="hero__arrow" type="button" data-hero-next aria-label="Destination suivante">›</button>
+        </div>
+        <span class="hero__counter" data-hero-counter>01 / 05</span>
+        <span class="hero__scroll"><i aria-hidden="true">↓</i> Faire défiler</span>
+        <span class="visually-hidden" role="status" aria-live="polite" data-hero-live></span>
+      </div>
+
+      <ul class="hero__thumbs" data-hero-thumbs>
+        <li>
+          <button class="hero__thumb" type="button" aria-label="Voir Tsingy de Bemaraha">
+            <span class="media"><span class="media__ph">Tsingy de Bemaraha</span><img src="assets/thumb-tsingy.jpg" alt=""></span>
+            <span class="hero__thumb-label" aria-hidden="true">Tsingy de Bemaraha</span>
+          </button>
+        </li>
+        <li>
+          <button class="hero__thumb" type="button" aria-label="Voir Nosy Iranja">
+            <span class="media"><span class="media__ph">Nosy Iranja</span><img src="assets/thumb-nosyiranja.jpg" alt=""></span>
+            <span class="hero__thumb-label" aria-hidden="true">Nosy Iranja</span>
+          </button>
+        </li>
+        <li>
+          <button class="hero__thumb" type="button" aria-label="Voir Massif de l’Isalo">
+            <span class="media"><span class="media__ph">Massif de l’Isalo</span><img src="assets/thumb-isalo.jpg" alt=""></span>
+            <span class="hero__thumb-label" aria-hidden="true">Massif de l’Isalo</span>
+          </button>
+        </li>
+        <li>
+          <button class="hero__thumb" type="button" aria-label="Voir Canal des Pangalanes">
+            <span class="media"><span class="media__ph">Canal des Pangalanes</span><img src="assets/thumb-pangalanes.jpg" alt=""></span>
+            <span class="hero__thumb-label" aria-hidden="true">Canal des Pangalanes</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     À PROPOS
+     ============================================================ -->
+<section class="section section--bone" id="apropos">
+  <div class="wrap grid-2 grid-2--center">
+    <div>
+      <p class="eyebrow eyebrow--dark"><span>Agence locale · Antananarivo</span></p>
+      <h2 class="h2" style="max-width:22ch">Des voyages écrits par ceux qui vivent ici</h2>
+      <p class="lead" style="max-width:52ch">Nous sommes une équipe de onze guides, chauffeurs et cuisiniers malgaches. Pas de bus climatisé ni d’itinéraire copié : chaque circuit se construit avec vous, village par village, au rythme des saisons et des marées.</p>
+
+      <div class="stats">
+        <div>
+          <div class="stat__num">14</div>
+          <div class="stat__label">Années sur le terrain</div>
+        </div>
+        <div>
+          <div class="stat__num">32</div>
+          <div class="stat__label">Villages partenaires</div>
+        </div>
+        <div>
+          <div class="stat__num">6</div>
+          <div class="stat__label">Voyageurs par groupe</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mosaic">
+      <div class="media media--light">
+        <span class="media__ph">Guide en forêt</span>
+        <img src="assets/home-about-1.jpg" alt="Un guide malgache en forêt, à l’arrêt sur un sentier" loading="lazy">
+      </div>
+      <div class="media media--light">
+        <span class="media__ph">Repas au campement</span>
+        <img src="assets/home-about-2.jpg" alt="Repas partagé autour de la table du campement" loading="lazy">
+      </div>
+      <div class="media media--light">
+        <span class="media__ph">Piste en 4x4</span>
+        <img src="assets/home-about-3.jpg" alt="4x4 sur une piste de terre rouge" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DESTINATIONS PHARES
+     ============================================================ -->
+<section class="section section--ink">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow"><span>Où aller</span></p>
+        <h2 class="h2" style="color:#fff">Quatre terrains<br>qui ne se ressemblent pas</h2>
+      </div>
+      <a class="link-rule" href="destinations.html">Voir les 12 destinations →</a>
+    </div>
+
+    <div class="grid-cards" style="gap:16px">
+      <a class="photo-card" href="destinations.html">
+        <span class="media">
+          <span class="media__ph">Allée des Baobabs</span>
+          <img src="assets/home-dest-baobabs.jpg" alt="Allée des Baobabs, Menabe" loading="lazy">
+        </span>
+        <div class="photo-card__veil" aria-hidden="true"></div>
+        <div class="photo-card__body">
+          <span class="photo-card__region">Menabe</span>
+          <span class="photo-card__name">Allée des Baobabs</span>
+          <span class="photo-card__note">Coucher de soleil sur la piste de Morondava.</span>
+        </div>
+      </a>
+
+      <a class="photo-card" href="destinations.html">
+        <span class="media">
+          <span class="media__ph">Tsingy de Bemaraha</span>
+          <img src="assets/home-dest-tsingy.jpg" alt="Tsingy de Bemaraha, Melaky" loading="lazy">
+        </span>
+        <div class="photo-card__veil" aria-hidden="true"></div>
+        <div class="photo-card__body">
+          <span class="photo-card__region">Melaky</span>
+          <span class="photo-card__name">Tsingy de Bemaraha</span>
+          <span class="photo-card__note">Deux jours dans un labyrinthe de calcaire.</span>
+        </div>
+      </a>
+
+      <a class="photo-card" href="destinations.html">
+        <span class="media">
+          <span class="media__ph">Nosy Iranja</span>
+          <img src="assets/home-dest-nosyiranja.jpg" alt="Nosy Iranja, Diana" loading="lazy">
+        </span>
+        <div class="photo-card__veil" aria-hidden="true"></div>
+        <div class="photo-card__body">
+          <span class="photo-card__region">Diana</span>
+          <span class="photo-card__name">Nosy Iranja</span>
+          <span class="photo-card__note">Un banc de sable entre deux îlots.</span>
+        </div>
+      </a>
+
+      <a class="photo-card" href="destinations.html">
+        <span class="media">
+          <span class="media__ph">Massif de l’Isalo</span>
+          <img src="assets/home-dest-isalo.jpg" alt="Massif de l’Isalo, Ihorombe" loading="lazy">
+        </span>
+        <div class="photo-card__veil" aria-hidden="true"></div>
+        <div class="photo-card__body">
+          <span class="photo-card__region">Ihorombe</span>
+          <span class="photo-card__name">Massif de l’Isalo</span>
+          <span class="photo-card__note">Canyons de grès et piscines naturelles.</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CIRCUITS SIGNATURE
+     ============================================================ -->
+<section class="section section--bone">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow eyebrow--dark"><span>Voyages guidés</span></p>
+        <h2 class="h2">Trois circuits signature</h2>
+      </div>
+      <a class="link-rule link-rule--dark" href="circuits.html">Tous les circuits →</a>
+    </div>
+
+    <div class="grid-cards" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))">
+      <a class="tour-card" href="circuits.html">
+        <span class="media media--light">
+          <span class="media__ph">Piste de l’Ouest</span>
+          <img src="assets/home-circ-ouest.jpg" alt="Piste de l’ouest, 4x4 et baobabs" loading="lazy">
+        </span>
+        <div class="tour-card__body">
+          <span class="tour-card__meta meta"><span>9 jours</span><span>·</span><span>Ouest</span><span>·</span><span>Modéré</span></span>
+          <h3 class="h3" style="font-size:23px">La piste des baobabs</h3>
+          <p>Antananarivo, Miandrivazo en pirogue, Tsingy, Morondava. Le grand ouest sec, ses forêts sèches et ses pistes rouges.</p>
+          <span class="tour-card__foot">
+            <span class="tour-card__price">1 840 €</span>
+            <span class="tour-card__more meta">Voir le détail →</span>
+          </span>
+        </div>
+      </a>
+
+      <a class="tour-card" href="circuits.html">
+        <span class="media media--light">
+          <span class="media__ph">Route du Sud</span>
+          <img src="assets/home-circ-sud.jpg" alt="Route du sud, Isalo et Anja" loading="lazy">
+        </span>
+        <div class="tour-card__body">
+          <span class="tour-card__meta meta"><span>12 jours</span><span>·</span><span>Sud</span><span>·</span><span>Sportif</span></span>
+          <h3 class="h3" style="font-size:23px">Hauts plateaux &amp; canyons</h3>
+          <p>Ambalavao, lémuriens d’Anja, trois jours de marche dans l’Isalo, puis les lagons d’Ifaty pour finir à plat.</p>
+          <span class="tour-card__foot">
+            <span class="tour-card__price">2 260 €</span>
+            <span class="tour-card__more meta">Voir le détail →</span>
+          </span>
+        </div>
+      </a>
+
+      <a class="tour-card" href="circuits.html">
+        <span class="media media--light">
+          <span class="media__ph">Nord — Nosy Be</span>
+          <img src="assets/home-circ-nord.jpg" alt="Archipel du nord, Nosy Be et Iranja" loading="lazy">
+        </span>
+        <div class="tour-card__body">
+          <span class="tour-card__meta meta"><span>7 jours</span><span>·</span><span>Nord</span><span>·</span><span>Facile</span></span>
+          <h3 class="h3" style="font-size:23px">Archipel du nord</h3>
+          <p>Nosy Be comme camp de base, Iranja et Sakatia en boutre, plongée sur le récif et nuits chez les pêcheurs.</p>
+          <span class="tour-card__foot">
+            <span class="tour-card__price">1 490 €</span>
+            <span class="tour-card__more meta">Voir le détail →</span>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TÉMOIGNAGE
+     ============================================================ -->
+<section class="section section--ink">
+  <figure class="quote" style="margin:0 auto">
+    <div class="quote__portrait media">
+      <span class="media__ph">Portrait</span>
+      <img src="assets/home-quote-portrait.jpg" alt="Portrait de Claire, voyageuse" loading="lazy">
+    </div>
+    <div class="quote__body">
+      <div class="quote__mark" aria-hidden="true">“</div>
+      <blockquote class="quote__text" style="margin:14px 0 0">Rivo a changé notre itinéraire au troisième jour parce que la mer était mauvaise. On a dormi dans son village. C’est devenu le meilleur souvenir du voyage.</blockquote>
+      <figcaption class="quote__who">Claire &amp; Damien — Circuit Nord, juillet</figcaption>
+    </div>
+  </figure>
+</section>
+
+<!-- ============================================================
+     BANDE CTA + FORMULAIRE COURT
+     ============================================================ -->
+<section class="cta-photo" id="contact">
+  <div class="media">
+    <span class="media__ph">Lagon ou piste au crépuscule</span>
+    <img src="assets/home-cta-bg.jpg" alt="" loading="lazy">
+  </div>
+  <div class="cta-photo__veil" aria-hidden="true"></div>
+
+  <div class="wrap grid-2 grid-2--center" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(32px,5vw,72px)">
+    <div>
+      <h2>Dites-nous quand vous partez</h2>
+      <p class="lead" style="max-width:44ch">Nous répondons en 48 h avec une première proposition d’itinéraire, sans engagement.</p>
+      <div class="cta-photo__contacts">
+        <span>+261 34 12 345 67</span>
+        <span>bonjour@maroa.mg</span>
+      </div>
+    </div>
+
+    <form class="form form--bare" data-form novalidate>
+      <div class="form__row" style="gap:14px">
+        <label>
+          <span class="visually-hidden">Votre nom</span>
+          <input type="text" name="nom" placeholder="Votre nom" required>
+        </label>
+        <label>
+          <span class="visually-hidden">E-mail</span>
+          <input type="email" name="email" placeholder="E-mail" required>
+        </label>
+      </div>
+      <label>
+        <span class="visually-hidden">Destination ou circuit envisagé</span>
+        <input type="text" name="envie" placeholder="Destination ou circuit envisagé">
+      </label>
+      <label>
+        <span class="visually-hidden">Votre message</span>
+        <textarea rows="3" name="message" placeholder="Dates, nombre de voyageurs, envies…"></textarea>
+      </label>
+      <button class="form__submit" type="submit">Demander un itinéraire</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="logo__word">Maroa<span class="logo__dot">.</span></span>
+    <nav aria-label="Navigation de pied de page">
+      <a href="destinations.html">Destinations</a>
+      <a href="circuits.html">Circuits</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <span class="site-footer__copy">© 2026 Maroa Voyages — Antananarivo</span>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
