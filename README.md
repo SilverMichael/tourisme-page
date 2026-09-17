@@ -3,6 +3,11 @@
 Site statique en HTML / CSS / JavaScript, sans build ni dépendance.
 Implémentation du handoff `Destination carousel avec zoom/design_handoff_maroa_site/`.
 
+# Disclaimer
+
+Toutes les photos et données présent dans ce projet sont soit tiré de google soit de l'imagination de l'auteur. Les numéros et adresses utilisé sont fictifs, toute ressemblances
+à des données réelles sont dues à de simple coincidences.
+
 ## Lancer
 
 Ouvrir `index.html` dans un navigateur. Rien à installer.
@@ -62,10 +67,10 @@ une destination, il suffit d'éditer le HTML.
 
 Sur la balise `<section class="hero" …>` de `index.html` :
 
-| Attribut | Défaut | Effet |
-|---|---|---|
+| Attribut        | Défaut  | Effet                                      |
+| --------------- | ------- | ------------------------------------------ |
 | `data-autoplay` | `false` | `true` fait avancer le carrousel tout seul |
-| `data-delay` | `7000` | Intervalle de l'autoplay, en millisecondes |
+| `data-delay`    | `7000`  | Intervalle de l'autoplay, en millisecondes |
 
 Le facteur de zoom se règle dans `css/style.css`, variable `--zoom` (1 → 1.8).
 
