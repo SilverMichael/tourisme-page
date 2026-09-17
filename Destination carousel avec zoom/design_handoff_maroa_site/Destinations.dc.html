@@ -1,0 +1,843 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="./support.js"></script>
+	</head>
+	<body>
+		<x-dc>
+			<helmet>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+				<link
+					href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@300;400;500&display=swap"
+					rel="stylesheet"
+				/>
+				<script src="./image-slot.js"></script>
+				<style>
+					html,
+					body {
+						margin: 0;
+						padding: 0;
+						background: #0c0b0a;
+					}
+					a {
+						color: #f0a623;
+						text-decoration: none;
+					}
+					a:hover {
+						color: #ffffff;
+					}
+				</style>
+			</helmet>
+			<div
+				style="
+					width: 100%;
+					background: #0c0b0a;
+					font-family: Barlow, Helvetica, sans-serif;
+				"
+			>
+				<header
+					style="
+						position: relative;
+						z-index: 40;
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						gap: 24px;
+						padding: 22px clamp(20px, 4vw, 58px) 18px;
+						border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+					"
+				>
+					<a
+						href="./Destination%20Slider.dc.html"
+						style="display: flex; align-items: center; gap: 12px"
+					>
+						<div
+							style="
+								width: 54px;
+								height: 54px;
+								border-radius: 50%;
+								background: #f0a623;
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								flex: none;
+							"
+						>
+							<span
+								style="
+									font-family: Oswald, sans-serif;
+									font-weight: 700;
+									font-size: 22px;
+									color: #12110f;
+									letter-spacing: -0.5px;
+								"
+								>M</span
+							>
+						</div>
+						<span
+							style="
+								font-family: Oswald, sans-serif;
+								font-weight: 700;
+								font-size: 30px;
+								letter-spacing: 2px;
+								color: #fff;
+								text-transform: uppercase;
+							"
+							>Maroa<span style="color: #f0a623">.</span></span
+						>
+					</a>
+					<button
+						type="button"
+						onClick="{{ toggleMenu }}"
+						style="{{ burgerStyle }}"
+					>
+						{{ menuGlyph }}
+					</button>
+					<nav style="{{ navStyle }}">
+						<a
+							href="./Destination%20Slider.dc.html"
+							style="
+								font-family: Oswald, sans-serif;
+								font-size: 13px;
+								letter-spacing: 1.6px;
+								text-transform: uppercase;
+								color: rgba(255, 255, 255, 0.82);
+							"
+							>Accueil</a
+						>
+						<a
+							href="./Destinations.dc.html"
+							style="
+								font-family: Oswald, sans-serif;
+								font-size: 13px;
+								letter-spacing: 1.6px;
+								text-transform: uppercase;
+								color: #f0a623;
+							"
+							>Destinations</a
+						>
+						<a
+							href="./Circuits.dc.html"
+							style="
+								font-family: Oswald, sans-serif;
+								font-size: 13px;
+								letter-spacing: 1.6px;
+								text-transform: uppercase;
+								color: rgba(255, 255, 255, 0.82);
+							"
+							>Circuits</a
+						>
+						<a
+							href="./A%20propos.dc.html"
+							style="
+								font-family: Oswald, sans-serif;
+								font-size: 13px;
+								letter-spacing: 1.6px;
+								text-transform: uppercase;
+								color: rgba(255, 255, 255, 0.82);
+							"
+							>À propos</a
+						>
+						<a
+							href="./Contact.dc.html"
+							style="
+								font-family: Oswald, sans-serif;
+								font-size: 13px;
+								letter-spacing: 1.6px;
+								text-transform: uppercase;
+								color: rgba(255, 255, 255, 0.82);
+							"
+							>Contact</a
+						>
+					</nav>
+				</header>
+
+				<section
+					data-screen-label="Destinations — Titre"
+					style="
+						position: relative;
+						overflow: hidden;
+						min-height: clamp(320px, 42vh, 460px);
+						display: flex;
+						align-items: flex-end;
+						padding: clamp(40px, 7vw, 86px) clamp(20px, 4vw, 58px);
+					"
+				>
+					<div style="position: absolute; inset: 0">
+						<image-slot
+							id="dest-hero"
+							shape="rect"
+							placeholder="Photo large — carte, côte ou hauts plateaux"
+						></image-slot>
+					</div>
+					<div
+						style="
+							position: absolute;
+							inset: 0;
+							background: linear-gradient(
+								to top,
+								rgba(8, 8, 7, 0.95) 0%,
+								rgba(8, 8, 7, 0.55) 55%,
+								rgba(8, 8, 7, 0.35) 100%
+							);
+						"
+					></div>
+					<div
+						style="
+							position: relative;
+							max-width: 1240px;
+							margin: 0 auto;
+							width: 100%;
+						"
+					>
+						<div
+							style="
+								display: flex;
+								align-items: center;
+								gap: 12px;
+								margin-bottom: 18px;
+							"
+						>
+							<div style="width: 38px; height: 1px; background: #f0a623"></div>
+							<span
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 12px;
+									letter-spacing: 3px;
+									text-transform: uppercase;
+									color: #f0a623;
+								"
+								>12 lieux · 6 régions</span
+							>
+						</div>
+						<h1
+							style="
+								margin: 0;
+								font-family: Oswald, sans-serif;
+								font-weight: 700;
+								font-size: clamp(36px, 5.4vw, 78px);
+								line-height: 1;
+								text-transform: uppercase;
+								color: #fff;
+								letter-spacing: -1px;
+							"
+						>
+							Destinations
+						</h1>
+						<p
+							style="
+								margin: 20px 0 0;
+								max-width: 56ch;
+								font-size: 17px;
+								line-height: 1.7;
+								color: rgba(255, 255, 255, 0.82);
+								text-wrap: pretty;
+							"
+						>
+							Du sable blanc du nord aux canyons du sud, voici les lieux où nous
+							emmenons nos voyageurs — avec la saison qui leur va le mieux.
+						</p>
+					</div>
+				</section>
+
+				<section
+					data-screen-label="Destinations — Filtres"
+					style="
+						background: #0c0b0a;
+						border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+						padding: 20px clamp(20px, 4vw, 58px);
+					"
+				>
+					<div
+						style="
+							max-width: 1240px;
+							margin: 0 auto;
+							display: flex;
+							align-items: center;
+							gap: 10px;
+							flex-wrap: wrap;
+						"
+					>
+						<sc-for list="{{ filters }}" as="f" hint-placeholder-count="6">
+							<button
+								type="button"
+								onClick="{{ f.onPick }}"
+								style="{{ f.style }}"
+							>
+								{{ f.label }}
+							</button>
+						</sc-for>
+						<span
+							style="
+								margin-left: auto;
+								font-family: Oswald, sans-serif;
+								font-size: 11px;
+								letter-spacing: 2px;
+								text-transform: uppercase;
+								color: rgba(255, 255, 255, 0.45);
+							"
+							>{{ resultLabel }}</span
+						>
+					</div>
+				</section>
+
+				<section
+					data-screen-label="Destinations — Grille"
+					style="
+						background: #0c0b0a;
+						padding: clamp(36px, 5vw, 72px) clamp(20px, 4vw, 58px)
+							clamp(56px, 9vw, 110px);
+					"
+				>
+					<div
+						style="
+							max-width: 1240px;
+							margin: 0 auto;
+							display: grid;
+							grid-template-columns: repeat(
+								auto-fill,
+								minmax(min(100%, 330px), 1fr)
+							);
+							gap: clamp(16px, 2vw, 26px);
+						"
+					>
+						<sc-for list="{{ places }}" as="p" hint-placeholder-count="9">
+							<a
+								href="./Circuits.dc.html"
+								style="
+									display: flex;
+									flex-direction: column;
+									background: #15130f;
+									border: 1px solid rgba(255, 255, 255, 0.09);
+									border-radius: 5px;
+									overflow: hidden;
+									color: #fff;
+									transition:
+										transform 0.35s,
+										border-color 0.35s;
+								"
+								style-hover="transform:translateY(-6px);border-color:rgba(240,166,35,0.55)"
+							>
+								<div
+									style="
+										position: relative;
+										height: 230px;
+										overflow: hidden;
+										background: #1c1a17;
+									"
+								>
+									<image-slot
+										id="{{ p.slotId }}"
+										shape="rect"
+										placeholder="{{ p.name }}"
+									></image-slot>
+									<div
+										style="
+											position: absolute;
+											top: 14px;
+											left: 14px;
+											padding: 7px 13px;
+											background: rgba(12, 11, 10, 0.78);
+											backdrop-filter: blur(4px);
+											border-radius: 999px;
+											font-family: Oswald, sans-serif;
+											font-size: 10px;
+											letter-spacing: 1.8px;
+											text-transform: uppercase;
+											color: #f0a623;
+										"
+									>
+										{{ p.region }}
+									</div>
+								</div>
+								<div
+									style="
+										padding: 22px 22px 24px;
+										display: flex;
+										flex-direction: column;
+										gap: 12px;
+										flex: 1;
+									"
+								>
+									<h3
+										style="
+											margin: 0;
+											font-family: Oswald, sans-serif;
+											font-weight: 600;
+											font-size: 22px;
+											line-height: 1.15;
+											text-transform: uppercase;
+										"
+									>
+										{{ p.name }}
+									</h3>
+									<p
+										style="
+											margin: 0;
+											font-size: 14.5px;
+											line-height: 1.6;
+											color: rgba(255, 255, 255, 0.68);
+											flex: 1;
+											text-wrap: pretty;
+										"
+									>
+										{{ p.text }}
+									</p>
+									<div
+										style="
+											display: flex;
+											align-items: center;
+											justify-content: space-between;
+											gap: 12px;
+											border-top: 1px solid rgba(255, 255, 255, 0.1);
+											padding-top: 14px;
+											font-family: Oswald, sans-serif;
+											font-size: 11px;
+											letter-spacing: 1.8px;
+											text-transform: uppercase;
+											color: rgba(255, 255, 255, 0.5);
+										"
+									>
+										<span>{{ p.season }}</span>
+										<span style="color: #f0a623">{{ p.days }}</span>
+									</div>
+								</div>
+							</a>
+						</sc-for>
+					</div>
+				</section>
+
+				<section
+					data-screen-label="Destinations — Saisons"
+					style="
+						background: #f4efe6;
+						color: #1b1917;
+						padding: clamp(56px, 9vw, 110px) clamp(20px, 4vw, 58px);
+					"
+				>
+					<div style="max-width: 1240px; margin: 0 auto">
+						<div
+							style="
+								display: flex;
+								align-items: center;
+								gap: 12px;
+								margin-bottom: 16px;
+							"
+						>
+							<div style="width: 38px; height: 1px; background: #b9791a"></div>
+							<span
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 12px;
+									letter-spacing: 3px;
+									text-transform: uppercase;
+									color: #b9791a;
+								"
+								>Quand partir</span
+							>
+						</div>
+						<h2
+							style="
+								margin: 0 0 clamp(28px, 4vw, 48px);
+								font-family: Oswald, sans-serif;
+								font-weight: 600;
+								font-size: clamp(28px, 3.4vw, 50px);
+								line-height: 1.05;
+								text-transform: uppercase;
+							"
+						>
+							L'année en quatre saisons
+						</h2>
+						<div
+							style="
+								display: grid;
+								grid-template-columns: repeat(
+									auto-fit,
+									minmax(min(100%, 220px), 1fr)
+								);
+								gap: clamp(16px, 2vw, 24px);
+							"
+						>
+							<div
+								style="background: #fff; border-radius: 5px; padding: 26px 24px"
+							>
+								<div
+									style="
+										font-family: Oswald, sans-serif;
+										font-weight: 700;
+										font-size: 13px;
+										letter-spacing: 2px;
+										text-transform: uppercase;
+										color: #b9791a;
+									"
+								>
+									Avr — Juin
+								</div>
+								<h3
+									style="
+										margin: 12px 0 10px;
+										font-family: Oswald, sans-serif;
+										font-weight: 600;
+										font-size: 20px;
+										text-transform: uppercase;
+									"
+								>
+									Vert et calme
+								</h3>
+								<p
+									style="
+										margin: 0;
+										font-size: 14.5px;
+										line-height: 1.65;
+										color: #4a443d;
+									"
+								>
+									Fin des pluies, paysages saturés, pistes praticables. La
+									meilleure période pour l'ouest.
+								</p>
+							</div>
+							<div
+								style="background: #fff; border-radius: 5px; padding: 26px 24px"
+							>
+								<div
+									style="
+										font-family: Oswald, sans-serif;
+										font-weight: 700;
+										font-size: 13px;
+										letter-spacing: 2px;
+										text-transform: uppercase;
+										color: #b9791a;
+									"
+								>
+									Juil — Août
+								</div>
+								<h3
+									style="
+										margin: 12px 0 10px;
+										font-family: Oswald, sans-serif;
+										font-weight: 600;
+										font-size: 20px;
+										text-transform: uppercase;
+									"
+								>
+									Baleines
+								</h3>
+								<p
+									style="
+										margin: 0;
+										font-size: 14.5px;
+										line-height: 1.65;
+										color: #4a443d;
+									"
+								>
+									Les baleines à bosse passent à Sainte-Marie. Nuits fraîches
+									sur les hauts plateaux.
+								</p>
+							</div>
+							<div
+								style="background: #fff; border-radius: 5px; padding: 26px 24px"
+							>
+								<div
+									style="
+										font-family: Oswald, sans-serif;
+										font-weight: 700;
+										font-size: 13px;
+										letter-spacing: 2px;
+										text-transform: uppercase;
+										color: #b9791a;
+									"
+								>
+									Sep — Nov
+								</div>
+								<h3
+									style="
+										margin: 12px 0 10px;
+										font-family: Oswald, sans-serif;
+										font-weight: 600;
+										font-size: 20px;
+										text-transform: uppercase;
+									"
+								>
+									Lémuriens
+								</h3>
+								<p
+									style="
+										margin: 0;
+										font-size: 14.5px;
+										line-height: 1.65;
+										color: #4a443d;
+									"
+								>
+									Naissances dans les parcs, jacarandas en fleur, mer d'huile
+									dans le nord.
+								</p>
+							</div>
+							<div
+								style="background: #fff; border-radius: 5px; padding: 26px 24px"
+							>
+								<div
+									style="
+										font-family: Oswald, sans-serif;
+										font-weight: 700;
+										font-size: 13px;
+										letter-spacing: 2px;
+										text-transform: uppercase;
+										color: #b9791a;
+									"
+								>
+									Déc — Mar
+								</div>
+								<h3
+									style="
+										margin: 12px 0 10px;
+										font-family: Oswald, sans-serif;
+										font-weight: 600;
+										font-size: 20px;
+										text-transform: uppercase;
+									"
+								>
+									Saison humide
+								</h3>
+								<p
+									style="
+										margin: 0;
+										font-size: 14.5px;
+										line-height: 1.65;
+										color: #4a443d;
+									"
+								>
+									Certaines pistes ferment. On se concentre sur le nord et les
+									côtes abritées.
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section
+					style="
+						background: #12110f;
+						padding: clamp(48px, 7vw, 90px) clamp(20px, 4vw, 58px);
+					"
+				>
+					<div
+						style="
+							max-width: 1240px;
+							margin: 0 auto;
+							display: flex;
+							align-items: center;
+							justify-content: space-between;
+							gap: 28px;
+							flex-wrap: wrap;
+						"
+					>
+						<h2
+							style="
+								margin: 0;
+								font-family: Oswald, sans-serif;
+								font-weight: 700;
+								font-size: clamp(26px, 3.2vw, 44px);
+								line-height: 1.05;
+								text-transform: uppercase;
+								color: #fff;
+								max-width: 24ch;
+								text-wrap: balance;
+							"
+						>
+							Une destination vous appelle ? On construit l'itinéraire autour.
+						</h2>
+						<a
+							href="./Contact.dc.html"
+							style="
+								padding: 16px 36px;
+								border: 1px solid #f0a623;
+								border-radius: 999px;
+								font-family: Oswald, sans-serif;
+								font-size: 13px;
+								letter-spacing: 2.4px;
+								text-transform: uppercase;
+								color: #f0a623;
+								transition:
+									background 0.3s,
+									color 0.3s;
+							"
+							style-hover="background:#f0a623;color:#12110f"
+							>Nous écrire</a
+						>
+					</div>
+				</section>
+
+				<footer
+					style="
+						background: #0c0b0a;
+						border-top: 1px solid rgba(255, 255, 255, 0.12);
+						padding: clamp(32px, 4vw, 48px) clamp(20px, 4vw, 58px);
+					"
+				>
+					<div
+						style="
+							max-width: 1240px;
+							margin: 0 auto;
+							display: flex;
+							align-items: center;
+							justify-content: space-between;
+							gap: 24px;
+							flex-wrap: wrap;
+						"
+					>
+						<span
+							style="
+								font-family: Oswald, sans-serif;
+								font-weight: 700;
+								font-size: 22px;
+								letter-spacing: 2px;
+								text-transform: uppercase;
+								color: #fff;
+							"
+							>Maroa<span style="color: #f0a623">.</span></span
+						>
+						<nav
+							style="
+								display: flex;
+								gap: clamp(14px, 2vw, 28px);
+								flex-wrap: wrap;
+							"
+						>
+							<a
+								href="./Destination%20Slider.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 11px;
+									letter-spacing: 2px;
+									text-transform: uppercase;
+									color: rgba(255, 255, 255, 0.6);
+								"
+								>Accueil</a
+							>
+							<a
+								href="./Circuits.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 11px;
+									letter-spacing: 2px;
+									text-transform: uppercase;
+									color: rgba(255, 255, 255, 0.6);
+								"
+								>Circuits</a
+							>
+							<a
+								href="./Contact.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 11px;
+									letter-spacing: 2px;
+									text-transform: uppercase;
+									color: rgba(255, 255, 255, 0.6);
+								"
+								>Contact</a
+							>
+						</nav>
+						<span style="font-size: 13px; color: rgba(255, 255, 255, 0.35)"
+							>© 2026 Maroa Voyages — Antananarivo</span
+						>
+					</div>
+				</footer>
+			</div>
+		</x-dc>
+		<script type="text/x-dc" data-dc-script data-props="{}">
+			const PLACES = [
+			  { id: 'baobabs', name: 'Allée des Baobabs', region: 'Menabe', season: 'Avr — Nov', days: '2 jours',
+			    text: "Vingt-cinq géants alignés sur la piste de Morondava. On y arrive pour la lumière de fin de journée." },
+			  { id: 'tsingy', name: 'Tsingy de Bemaraha', region: 'Melaky', season: 'Mai — Oct', days: '3 jours',
+			    text: "Un labyrinthe de calcaire coupant, passerelles et via ferrata. Patrimoine mondial." },
+			  { id: 'isalo', name: 'Massif de l’Isalo', region: 'Ihorombe', season: 'Avr — Oct', days: '3 jours',
+			    text: "Canyons de grès, piscines naturelles et bivouac sous les étoiles au bord du plateau." },
+			  { id: 'nosyiranja', name: 'Nosy Iranja', region: 'Diana', season: 'Mai — Nov', days: '1 jour',
+			    text: "Deux îlots reliés par un banc de sable blanc à marée basse. Tortues et snorkeling." },
+			  { id: 'nosybe', name: 'Nosy Be', region: 'Diana', season: 'Toute l’année', days: '4 jours',
+			    text: "Le camp de base du nord : marché de Hell-Ville, plantations d’ylang-ylang, récifs." },
+			  { id: 'saintemarie', name: 'Île Sainte-Marie', region: 'Analanjirofo', season: 'Juil — Sep', days: '4 jours',
+			    text: "Baie des baleines, cimetière des pirates et une seule route bordée de cocotiers." },
+			  { id: 'ranomafana', name: 'Ranomafana', region: 'Haute Matsiatra', season: 'Avr — Nov', days: '2 jours',
+			    text: "Forêt pluviale dense, sources chaudes et douze espèces de lémuriens à repérer de nuit." },
+			  { id: 'pangalanes', name: 'Canal des Pangalanes', region: 'Atsinanana', season: 'Avr — Nov', days: '3 jours',
+			    text: "Six cents kilomètres de lagunes reliées. Navigation lente entre villages de pêcheurs." },
+			  { id: 'andringitra', name: 'Andringitra', region: 'Haute Matsiatra', season: 'Mai — Oct', days: '4 jours',
+			    text: "Le trek du Pic Boby, 2 658 m : granit, troupeaux zébus et nuits à 5 °C." },
+			  { id: 'anja', name: 'Réserve d’Anja', region: 'Haute Matsiatra', season: 'Toute l’année', days: '½ journée',
+			    text: "Réserve gérée par le village. Makis catta entre les blocs de granit, à portée d’objectif." },
+			  { id: 'ifaty', name: 'Ifaty & Mangily', region: 'Atsimo-Andrefana', season: 'Avr — Nov', days: '3 jours',
+			    text: "Forêt d’épineux, baobabs nains et le troisième plus grand récif corallien du monde." },
+			  { id: 'diego', name: 'Baie de Diego-Suarez', region: 'Diana', season: 'Mai — Nov', days: '3 jours',
+			    text: "Kitesurf dans la baie de Sakalava, tsingy rouges et mer d’Émeraude en boutre." }
+			];
+
+			const FILTERS = ['Toutes', 'Nord', 'Ouest', 'Sud', 'Est', 'Hauts plateaux'];
+			const ZONE = {
+			  Diana: 'Nord', Analanjirofo: 'Est', Atsinanana: 'Est', Melaky: 'Ouest', Menabe: 'Ouest',
+			  Ihorombe: 'Sud', 'Atsimo-Andrefana': 'Sud', 'Haute Matsiatra': 'Hauts plateaux'
+			};
+
+			class Component extends DCLogic {
+			  state = { filter: 'Toutes', narrow: false, menuOpen: false };
+
+			  componentDidMount() {
+			    this.mq = window.matchMedia('(max-width: 880px)');
+			    this.onMq = e => this.setState({ narrow: e.matches, menuOpen: false });
+			    this.setState({ narrow: this.mq.matches });
+			    this.mq.addEventListener('change', this.onMq);
+			  }
+			  componentWillUnmount() { if (this.mq) this.mq.removeEventListener('change', this.onMq); }
+
+			  navBits() {
+			    const { narrow, menuOpen } = this.state;
+			    return {
+			      navStyle: narrow
+			        ? (menuOpen
+			            ? { position: 'fixed', inset: 0, zIndex: 60, background: 'rgba(10,9,8,0.97)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 30 }
+			            : { display: 'none' })
+			        : { display: 'flex', alignItems: 'center', gap: 'clamp(16px,2.4vw,38px)', flexWrap: 'wrap' },
+			      burgerStyle: {
+			        display: narrow ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center',
+			        position: 'relative', zIndex: 70, width: 46, height: 46, borderRadius: 999,
+			        border: '1px solid rgba(255,255,255,0.32)', background: 'rgba(12,11,10,0.5)',
+			        color: '#fff', fontSize: 20, lineHeight: 1, cursor: 'pointer'
+			      },
+			      menuGlyph: menuOpen ? '✕' : '≡',
+			      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen }))
+			    };
+			  }
+
+
+			  renderVals() {
+			    const active = this.state.filter;
+			    const places = PLACES
+			      .filter(p => active === 'Toutes' || ZONE[p.region] === active)
+			      .map(p => ({ ...p, slotId: 'thumb-' + p.id }));
+
+			    const filters = FILTERS.map(label => ({
+			      label,
+			      onPick: () => this.setState({ filter: label }),
+			      style: {
+			        padding: '10px 20px', borderRadius: 999, cursor: 'pointer',
+			        fontFamily: 'Oswald, sans-serif', fontSize: 11, letterSpacing: '1.8px', textTransform: 'uppercase',
+			        border: '1px solid ' + (label === active ? '#f0a623' : 'rgba(255,255,255,0.22)'),
+			        background: label === active ? '#f0a623' : 'transparent',
+			        color: label === active ? '#12110f' : 'rgba(255,255,255,0.78)',
+			        transition: 'background .25s, color .25s, border-color .25s'
+			      }
+			    }));
+
+			    return {
+			      ...this.navBits(),
+			      places, filters,
+			      resultLabel: places.length + (places.length > 1 ? ' lieux' : ' lieu')
+			    };
+			  }
+			}
+		</script>
+	</body>
+</html>

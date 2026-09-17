@@ -1,0 +1,931 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="./support.js"></script>
+	</head>
+	<body>
+		<x-dc>
+			<helmet>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+				<link
+					href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@300;400;500&display=swap"
+					rel="stylesheet"
+				/>
+				<script src="./image-slot.js"></script>
+				<style>
+					html,
+					body {
+						margin: 0;
+						padding: 0;
+						background: #0c0b0a;
+					}
+					a {
+						color: #f0a623;
+						text-decoration: none;
+					}
+					a:hover {
+						color: #ffffff;
+					}
+				</style>
+			</helmet>
+			<div
+				style="
+					width: 100%;
+					background: #0c0b0a;
+					font-family: Barlow, Helvetica, sans-serif;
+				"
+			>
+				<header
+					style="
+						position: relative;
+						z-index: 40;
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						gap: 24px;
+						padding: 22px clamp(20px, 4vw, 58px) 18px;
+						border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+					"
+				>
+					<a
+						href="./Destination%20Slider.dc.html"
+						style="display: flex; align-items: center; gap: 12px"
+					>
+						<div
+							style="
+								width: 54px;
+								height: 54px;
+								border-radius: 50%;
+								background: #f0a623;
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								flex: none;
+							"
+						>
+							<span
+								style="
+									font-family: Oswald, sans-serif;
+									font-weight: 700;
+									font-size: 22px;
+									color: #12110f;
+									letter-spacing: -0.5px;
+								"
+								>M</span
+							>
+						</div>
+						<span
+							style="
+								font-family: Oswald, sans-serif;
+								font-weight: 700;
+								font-size: 30px;
+								letter-spacing: 2px;
+								color: #fff;
+								text-transform: uppercase;
+							"
+							>Maroa<span style="color: #f0a623">.</span></span
+						>
+					</a>
+					<button
+						type="button"
+						onClick="{{ toggleMenu }}"
+						style="{{ burgerStyle }}"
+					>
+						{{ menuGlyph }}
+					</button>
+					<nav style="{{ navStyle }}">
+						<a
+							href="./Destination%20Slider.dc.html"
+							style="
+								font-family: Oswald, sans-serif;
+								font-size: 13px;
+								letter-spacing: 1.6px;
+								text-transform: uppercase;
+								color: rgba(255, 255, 255, 0.82);
+							"
+							>Accueil</a
+						>
+						<a
+							href="./Destinations.dc.html"
+							style="
+								font-family: Oswald, sans-serif;
+								font-size: 13px;
+								letter-spacing: 1.6px;
+								text-transform: uppercase;
+								color: rgba(255, 255, 255, 0.82);
+							"
+							>Destinations</a
+						>
+						<a
+							href="./Circuits.dc.html"
+							style="
+								font-family: Oswald, sans-serif;
+								font-size: 13px;
+								letter-spacing: 1.6px;
+								text-transform: uppercase;
+								color: rgba(255, 255, 255, 0.82);
+							"
+							>Circuits</a
+						>
+						<a
+							href="./A%20propos.dc.html"
+							style="
+								font-family: Oswald, sans-serif;
+								font-size: 13px;
+								letter-spacing: 1.6px;
+								text-transform: uppercase;
+								color: #f0a623;
+							"
+							>À propos</a
+						>
+						<a
+							href="./Contact.dc.html"
+							style="
+								font-family: Oswald, sans-serif;
+								font-size: 13px;
+								letter-spacing: 1.6px;
+								text-transform: uppercase;
+								color: rgba(255, 255, 255, 0.82);
+							"
+							>Contact</a
+						>
+					</nav>
+				</header>
+
+				<section
+					data-screen-label="À propos — Titre"
+					style="
+						position: relative;
+						overflow: hidden;
+						min-height: clamp(340px, 52vh, 540px);
+						display: flex;
+						align-items: flex-end;
+						padding: clamp(40px, 7vw, 86px) clamp(20px, 4vw, 58px);
+					"
+				>
+					<div style="position: absolute; inset: 0">
+						<image-slot
+							id="about-hero"
+							shape="rect"
+							placeholder="L'équipe sur une piste, photo large"
+						></image-slot>
+					</div>
+					<div
+						style="
+							position: absolute;
+							inset: 0;
+							background: linear-gradient(
+								to top,
+								rgba(8, 8, 7, 0.95) 0%,
+								rgba(8, 8, 7, 0.5) 58%,
+								rgba(8, 8, 7, 0.3) 100%
+							);
+						"
+					></div>
+					<div
+						style="
+							position: relative;
+							max-width: 1240px;
+							margin: 0 auto;
+							width: 100%;
+						"
+					>
+						<div
+							style="
+								display: flex;
+								align-items: center;
+								gap: 12px;
+								margin-bottom: 18px;
+							"
+						>
+							<div style="width: 38px; height: 1px; background: #f0a623"></div>
+							<span
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 12px;
+									letter-spacing: 3px;
+									text-transform: uppercase;
+									color: #f0a623;
+								"
+								>Agence locale · Antananarivo</span
+							>
+						</div>
+						<h1
+							style="
+								margin: 0;
+								font-family: Oswald, sans-serif;
+								font-weight: 700;
+								font-size: clamp(34px, 5.2vw, 74px);
+								line-height: 1;
+								text-transform: uppercase;
+								color: #fff;
+								letter-spacing: -1px;
+								max-width: 18ch;
+								text-wrap: balance;
+							"
+						>
+							Onze personnes, une île
+						</h1>
+						<p
+							style="
+								margin: 20px 0 0;
+								max-width: 56ch;
+								font-size: 17px;
+								line-height: 1.7;
+								color: rgba(255, 255, 255, 0.84);
+								text-wrap: pretty;
+							"
+						>
+							Maroa est née en 2012 d'un constat simple : les meilleurs voyages
+							à Madagascar sont ceux que racontent les gens d'ici.
+						</p>
+					</div>
+				</section>
+
+				<section
+					data-screen-label="À propos — Histoire"
+					style="
+						background: #f4efe6;
+						color: #1b1917;
+						padding: clamp(56px, 9vw, 120px) clamp(20px, 4vw, 58px);
+					"
+				>
+					<div
+						style="
+							max-width: 1240px;
+							margin: 0 auto;
+							display: grid;
+							grid-template-columns: repeat(
+								auto-fit,
+								minmax(min(100%, 320px), 1fr)
+							);
+							gap: clamp(32px, 5vw, 80px);
+							align-items: start;
+						"
+					>
+						<div>
+							<div
+								style="
+									display: flex;
+									align-items: center;
+									gap: 12px;
+									margin-bottom: 20px;
+								"
+							>
+								<div
+									style="width: 38px; height: 1px; background: #b9791a"
+								></div>
+								<span
+									style="
+										font-family: Oswald, sans-serif;
+										font-size: 12px;
+										letter-spacing: 3px;
+										text-transform: uppercase;
+										color: #b9791a;
+									"
+									>Notre histoire</span
+								>
+							</div>
+							<h2
+								style="
+									margin: 0;
+									font-family: Oswald, sans-serif;
+									font-weight: 600;
+									font-size: clamp(28px, 3.4vw, 50px);
+									line-height: 1.05;
+									text-transform: uppercase;
+									max-width: 22ch;
+									text-wrap: balance;
+								"
+							>
+								Un 4x4 emprunté et deux carnets
+							</h2>
+							<p
+								style="
+									margin: 22px 0 0;
+									max-width: 54ch;
+									font-size: 16.5px;
+									line-height: 1.75;
+									color: #4a443d;
+									text-wrap: pretty;
+								"
+							>
+								Rivo était guide de parc, Hanta travaillait dans un hôtel de
+								Nosy Be. Ils se sont rencontrés sur la RN7, ont emprunté un 4x4
+								à un cousin et emmené leurs six premiers voyageurs dans l'Isalo.
+								Quatorze ans plus tard, nous sommes onze et nous refusons
+								toujours les groupes de plus de six.
+							</p>
+							<p
+								style="
+									margin: 18px 0 0;
+									max-width: 54ch;
+									font-size: 16.5px;
+									line-height: 1.75;
+									color: #4a443d;
+									text-wrap: pretty;
+								"
+							>
+								Nous ne revendons pas de séjours préfabriqués : nous conduisons,
+								nous guidons et nous dormons dans les mêmes villages que vous.
+								Quand la mer est mauvaise ou qu'une piste est coupée, nous
+								changeons le programme sur place — c'est souvent là que naissent
+								les meilleurs souvenirs.
+							</p>
+						</div>
+						<div style="display: flex; flex-direction: column; gap: 0">
+							<sc-for list="{{ milestones }}" as="m" hint-placeholder-count="5">
+								<div
+									style="
+										display: grid;
+										grid-template-columns: 92px 1fr;
+										gap: 20px;
+										padding: 20px 0;
+										border-top: 1px solid #e0d7c8;
+									"
+								>
+									<span
+										style="
+											font-family: Oswald, sans-serif;
+											font-weight: 700;
+											font-size: 18px;
+											color: #b9791a;
+										"
+										>{{ m.year }}</span
+									>
+									<span
+										style="font-size: 15.5px; line-height: 1.6; color: #1b1917"
+										>{{ m.label }}</span
+									>
+								</div>
+							</sc-for>
+						</div>
+					</div>
+				</section>
+
+				<section
+					data-screen-label="À propos — Équipe"
+					style="
+						background: #0c0b0a;
+						padding: clamp(56px, 9vw, 120px) clamp(20px, 4vw, 58px);
+					"
+				>
+					<div style="max-width: 1240px; margin: 0 auto">
+						<div
+							style="
+								display: flex;
+								align-items: center;
+								gap: 12px;
+								margin-bottom: 16px;
+							"
+						>
+							<div style="width: 38px; height: 1px; background: #f0a623"></div>
+							<span
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 12px;
+									letter-spacing: 3px;
+									text-transform: uppercase;
+									color: #f0a623;
+								"
+								>Qui vous accompagne</span
+							>
+						</div>
+						<h2
+							style="
+								margin: 0 0 clamp(28px, 4vw, 52px);
+								font-family: Oswald, sans-serif;
+								font-weight: 600;
+								font-size: clamp(28px, 3.4vw, 50px);
+								line-height: 1.05;
+								text-transform: uppercase;
+								color: #fff;
+							"
+						>
+							L'équipe sur le terrain
+						</h2>
+						<div
+							style="
+								display: grid;
+								grid-template-columns: repeat(
+									auto-fit,
+									minmax(min(100%, 240px), 1fr)
+								);
+								gap: clamp(16px, 2vw, 26px);
+							"
+						>
+							<sc-for list="{{ team }}" as="t" hint-placeholder-count="4">
+								<div style="display: flex; flex-direction: column; gap: 16px">
+									<div
+										style="
+											position: relative;
+											height: 300px;
+											overflow: hidden;
+											border-radius: 5px;
+											background: #1c1a17;
+										"
+									>
+										<div
+											style="
+												position: absolute;
+												inset: 0;
+												transition: transform 0.8s
+													cubic-bezier(0.16, 0.84, 0.24, 1);
+											"
+											style-hover="transform:scale(1.06)"
+										>
+											<image-slot
+												id="{{ t.slotId }}"
+												shape="rect"
+												placeholder="{{ t.name }}"
+											></image-slot>
+										</div>
+									</div>
+									<div>
+										<h3
+											style="
+												margin: 0;
+												font-family: Oswald, sans-serif;
+												font-weight: 600;
+												font-size: 20px;
+												text-transform: uppercase;
+												color: #fff;
+											"
+										>
+											{{ t.name }}
+										</h3>
+										<div
+											style="
+												margin-top: 6px;
+												font-family: Oswald, sans-serif;
+												font-size: 11px;
+												letter-spacing: 2px;
+												text-transform: uppercase;
+												color: #f0a623;
+											"
+										>
+											{{ t.role }}
+										</div>
+										<p
+											style="
+												margin: 12px 0 0;
+												font-size: 14.5px;
+												line-height: 1.65;
+												color: rgba(255, 255, 255, 0.7);
+												text-wrap: pretty;
+											"
+										>
+											{{ t.text }}
+										</p>
+									</div>
+								</div>
+							</sc-for>
+						</div>
+					</div>
+				</section>
+
+				<section
+					data-screen-label="À propos — Engagements"
+					style="
+						background: #f4efe6;
+						color: #1b1917;
+						padding: clamp(56px, 9vw, 120px) clamp(20px, 4vw, 58px);
+					"
+				>
+					<div style="max-width: 1240px; margin: 0 auto">
+						<div
+							style="
+								display: flex;
+								align-items: center;
+								gap: 12px;
+								margin-bottom: 16px;
+							"
+						>
+							<div style="width: 38px; height: 1px; background: #b9791a"></div>
+							<span
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 12px;
+									letter-spacing: 3px;
+									text-transform: uppercase;
+									color: #b9791a;
+								"
+								>Nos engagements</span
+							>
+						</div>
+						<h2
+							style="
+								margin: 0 0 clamp(28px, 4vw, 48px);
+								font-family: Oswald, sans-serif;
+								font-weight: 600;
+								font-size: clamp(28px, 3.4vw, 50px);
+								line-height: 1.05;
+								text-transform: uppercase;
+							"
+						>
+							Quatre règles qu'on ne négocie pas
+						</h2>
+						<div
+							style="
+								display: grid;
+								grid-template-columns: repeat(
+									auto-fit,
+									minmax(min(100%, 250px), 1fr)
+								);
+								gap: clamp(16px, 2vw, 28px);
+							"
+						>
+							<div
+								style="background: #fff; border-radius: 5px; padding: 28px 26px"
+							>
+								<div
+									style="
+										font-family: Oswald, sans-serif;
+										font-weight: 700;
+										font-size: 32px;
+										color: #e0d7c8;
+									"
+								>
+									01
+								</div>
+								<h3
+									style="
+										margin: 14px 0 10px;
+										font-family: Oswald, sans-serif;
+										font-weight: 600;
+										font-size: 19px;
+										text-transform: uppercase;
+									"
+								>
+									Six voyageurs maximum
+								</h3>
+								<p
+									style="
+										margin: 0;
+										font-size: 14.5px;
+										line-height: 1.65;
+										color: #4a443d;
+									"
+								>
+									Un seul 4x4, une seule table au dîner. Au-delà, un village
+									cesse d'être un village et devient une étape.
+								</p>
+							</div>
+							<div
+								style="background: #fff; border-radius: 5px; padding: 28px 26px"
+							>
+								<div
+									style="
+										font-family: Oswald, sans-serif;
+										font-weight: 700;
+										font-size: 32px;
+										color: #e0d7c8;
+									"
+								>
+									02
+								</div>
+								<h3
+									style="
+										margin: 14px 0 10px;
+										font-family: Oswald, sans-serif;
+										font-weight: 600;
+										font-size: 19px;
+										text-transform: uppercase;
+									"
+								>
+									Salaires à l'année
+								</h3>
+								<p
+									style="
+										margin: 0;
+										font-size: 14.5px;
+										line-height: 1.65;
+										color: #4a443d;
+									"
+								>
+									Nos guides et chauffeurs sont salariés douze mois sur douze,
+									pas seulement en haute saison.
+								</p>
+							</div>
+							<div
+								style="background: #fff; border-radius: 5px; padding: 28px 26px"
+							>
+								<div
+									style="
+										font-family: Oswald, sans-serif;
+										font-weight: 700;
+										font-size: 32px;
+										color: #e0d7c8;
+									"
+								>
+									03
+								</div>
+								<h3
+									style="
+										margin: 14px 0 10px;
+										font-family: Oswald, sans-serif;
+										font-weight: 600;
+										font-size: 19px;
+										text-transform: uppercase;
+									"
+								>
+									3 % aux réserves
+								</h3>
+								<p
+									style="
+										margin: 0;
+										font-size: 14.5px;
+										line-height: 1.65;
+										color: #4a443d;
+									"
+								>
+									Trois pour cent de chaque séjour vont aux réserves
+									communautaires d'Anja et de Lokobe.
+								</p>
+							</div>
+							<div
+								style="background: #fff; border-radius: 5px; padding: 28px 26px"
+							>
+								<div
+									style="
+										font-family: Oswald, sans-serif;
+										font-weight: 700;
+										font-size: 32px;
+										color: #e0d7c8;
+									"
+								>
+									04
+								</div>
+								<h3
+									style="
+										margin: 14px 0 10px;
+										font-family: Oswald, sans-serif;
+										font-weight: 600;
+										font-size: 19px;
+										text-transform: uppercase;
+									"
+								>
+									Zéro bouteille plastique
+								</h3>
+								<p
+									style="
+										margin: 0;
+										font-size: 14.5px;
+										line-height: 1.65;
+										color: #4a443d;
+									"
+								>
+									Gourdes et filtres fournis au départ. Sur neuf jours, cela
+									représente 140 bouteilles évitées.
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section
+					data-screen-label="À propos — Presse"
+					style="
+						background: #0c0b0a;
+						padding: clamp(48px, 7vw, 90px) clamp(20px, 4vw, 58px);
+					"
+				>
+					<div style="max-width: 980px; margin: 0 auto; text-align: center">
+						<div
+							style="
+								font-family: Oswald, sans-serif;
+								font-size: 56px;
+								line-height: 0.6;
+								color: #f0a623;
+							"
+						>
+							“
+						</div>
+						<p
+							style="
+								margin: 18px 0 0;
+								font-family: Oswald, sans-serif;
+								font-weight: 400;
+								font-size: clamp(20px, 2.2vw, 30px);
+								line-height: 1.45;
+								color: #fff;
+								text-wrap: pretty;
+							"
+						>
+							Ils connaissent le nom du grand-père qui tient la pirogue. C'est
+							tout le contraire d'une agence.
+						</p>
+						<div
+							style="
+								margin-top: 22px;
+								font-family: Oswald, sans-serif;
+								font-size: 12px;
+								letter-spacing: 2px;
+								text-transform: uppercase;
+								color: rgba(255, 255, 255, 0.55);
+							"
+						>
+							Revue Grands Reportages — mars 2025
+						</div>
+					</div>
+				</section>
+
+				<section
+					style="
+						background: #12110f;
+						padding: clamp(48px, 7vw, 90px) clamp(20px, 4vw, 58px);
+					"
+				>
+					<div
+						style="
+							max-width: 1240px;
+							margin: 0 auto;
+							display: flex;
+							align-items: center;
+							justify-content: space-between;
+							gap: 28px;
+							flex-wrap: wrap;
+						"
+					>
+						<h2
+							style="
+								margin: 0;
+								font-family: Oswald, sans-serif;
+								font-weight: 700;
+								font-size: clamp(26px, 3.2vw, 44px);
+								line-height: 1.05;
+								text-transform: uppercase;
+								color: #fff;
+								max-width: 24ch;
+								text-wrap: balance;
+							"
+						>
+							Parlons de votre voyage, pas de nous.
+						</h2>
+						<a
+							href="./Contact.dc.html"
+							style="
+								padding: 16px 36px;
+								background: #f0a623;
+								border-radius: 999px;
+								font-family: Oswald, sans-serif;
+								font-size: 13px;
+								letter-spacing: 2.4px;
+								text-transform: uppercase;
+								color: #12110f;
+								transition: background 0.3s;
+							"
+							style-hover="background:#ffbe4d;color:#12110f"
+							>Nous écrire</a
+						>
+					</div>
+				</section>
+
+				<footer
+					style="
+						background: #0c0b0a;
+						border-top: 1px solid rgba(255, 255, 255, 0.12);
+						padding: clamp(32px, 4vw, 48px) clamp(20px, 4vw, 58px);
+					"
+				>
+					<div
+						style="
+							max-width: 1240px;
+							margin: 0 auto;
+							display: flex;
+							align-items: center;
+							justify-content: space-between;
+							gap: 24px;
+							flex-wrap: wrap;
+						"
+					>
+						<span
+							style="
+								font-family: Oswald, sans-serif;
+								font-weight: 700;
+								font-size: 22px;
+								letter-spacing: 2px;
+								text-transform: uppercase;
+								color: #fff;
+							"
+							>Maroa<span style="color: #f0a623">.</span></span
+						>
+						<nav
+							style="
+								display: flex;
+								gap: clamp(14px, 2vw, 28px);
+								flex-wrap: wrap;
+							"
+						>
+							<a
+								href="./Destination%20Slider.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 11px;
+									letter-spacing: 2px;
+									text-transform: uppercase;
+									color: rgba(255, 255, 255, 0.6);
+								"
+								>Accueil</a
+							>
+							<a
+								href="./Destinations.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 11px;
+									letter-spacing: 2px;
+									text-transform: uppercase;
+									color: rgba(255, 255, 255, 0.6);
+								"
+								>Destinations</a
+							>
+							<a
+								href="./Circuits.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 11px;
+									letter-spacing: 2px;
+									text-transform: uppercase;
+									color: rgba(255, 255, 255, 0.6);
+								"
+								>Circuits</a
+							>
+							<a
+								href="./Contact.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 11px;
+									letter-spacing: 2px;
+									text-transform: uppercase;
+									color: rgba(255, 255, 255, 0.6);
+								"
+								>Contact</a
+							>
+						</nav>
+						<span style="font-size: 13px; color: rgba(255, 255, 255, 0.35)"
+							>© 2026 Maroa Voyages — Antananarivo</span
+						>
+					</div>
+				</footer>
+			</div>
+		</x-dc>
+		<script type="text/x-dc" data-dc-script data-props="{}">
+			const TEAM = [
+			  { id: 'rivo', name: 'Rivo', role: 'Cofondateur · guide', text: "Ancien guide du parc de l'Isalo. Repère un lémurien à quarante mètres, dans le noir." },
+			  { id: 'hanta', name: 'Hanta', role: 'Cofondatrice · itinéraires', text: "Écrit chaque programme à la main. C'est elle qui vous répondra sous 48 h." },
+			  { id: 'fetra', name: 'Fetra', role: 'Chauffeur · ouest', text: "Vingt ans de pistes du Menabe. Change une roue en huit minutes, chrono vérifié." },
+			  { id: 'soa', name: 'Soa', role: 'Cuisinière de camp', text: "Fait un romazava au feu de bois qui met fin aux débats sur la cuisine malgache." }
+			];
+
+			const MILESTONES = [
+			  { year: '2012', label: "Premier départ : six voyageurs, un 4x4 emprunté, dix jours dans l'Isalo." },
+			  { year: '2015', label: "Ouverture du bureau d'Antananarivo et recrutement de Fetra et Soa." },
+			  { year: '2018', label: "Partenariat avec la réserve communautaire d'Anja, gérée par le village." },
+			  { year: '2021', label: "Année blanche : l'équipe reste salariée, on répare les véhicules." },
+			  { year: '2026', label: "Onze salariés, 32 villages partenaires, toujours six voyageurs par départ." }
+			];
+
+			class Component extends DCLogic {
+			  state = { narrow: false, menuOpen: false };
+
+			  componentDidMount() {
+			    this.mq = window.matchMedia('(max-width: 880px)');
+			    this.onMq = e => this.setState({ narrow: e.matches, menuOpen: false });
+			    this.setState({ narrow: this.mq.matches });
+			    this.mq.addEventListener('change', this.onMq);
+			  }
+			  componentWillUnmount() { if (this.mq) this.mq.removeEventListener('change', this.onMq); }
+
+			  navBits() {
+			    const { narrow, menuOpen } = this.state;
+			    return {
+			      navStyle: narrow
+			        ? (menuOpen
+			            ? { position: 'fixed', inset: 0, zIndex: 60, background: 'rgba(10,9,8,0.97)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 30 }
+			            : { display: 'none' })
+			        : { display: 'flex', alignItems: 'center', gap: 'clamp(16px,2.4vw,38px)', flexWrap: 'wrap' },
+			      burgerStyle: {
+			        display: narrow ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center',
+			        position: 'relative', zIndex: 70, width: 46, height: 46, borderRadius: 999,
+			        border: '1px solid rgba(255,255,255,0.32)', background: 'rgba(12,11,10,0.5)',
+			        color: '#fff', fontSize: 20, lineHeight: 1, cursor: 'pointer'
+			      },
+			      menuGlyph: menuOpen ? '✕' : '≡',
+			      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen }))
+			    };
+			  }
+
+			  renderVals() {
+			    return {
+			      ...this.navBits(),
+			      team: TEAM.map(t => ({ ...t, slotId: 'team-' + t.id })),
+			      milestones: MILESTONES
+			    };
+			  }
+			}
+		</script>
+	</body>
+</html>

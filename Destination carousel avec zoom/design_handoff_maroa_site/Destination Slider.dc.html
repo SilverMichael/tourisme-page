@@ -1,0 +1,1939 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="./support.js"></script>
+	</head>
+	<body>
+		<x-dc>
+			<helmet>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+				<link
+					href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@300;400;500&display=swap"
+					rel="stylesheet"
+				/>
+				<script src="./image-slot.js"></script>
+				<style>
+					html,
+					body {
+						margin: 0;
+						padding: 0;
+						background: #0c0b0a;
+					}
+					a {
+						color: #f0a623;
+						text-decoration: none;
+					}
+					a:hover {
+						color: #ffffff;
+					}
+					@keyframes riseA {
+						from {
+							opacity: 0;
+							transform: translateY(26px);
+						}
+						to {
+							opacity: 1;
+							transform: none;
+						}
+					}
+					@keyframes riseB {
+						from {
+							opacity: 0;
+							transform: translateY(26px);
+						}
+						to {
+							opacity: 1;
+							transform: none;
+						}
+					}
+					@keyframes bob {
+						0%,
+						100% {
+							transform: translateY(0);
+						}
+						50% {
+							transform: translateY(7px);
+						}
+					}
+				</style>
+			</helmet>
+			<div
+				style="
+					width: 100%;
+					background: #0c0b0a;
+					font-family: Barlow, Helvetica, sans-serif;
+				"
+			>
+				<section
+					data-screen-label="Accueil — Hero"
+					style="
+						position: relative;
+						width: 100%;
+						height: 100vh;
+						overflow: hidden;
+						display: flex;
+						flex-direction: column;
+						background: #0c0b0a;
+					"
+				>
+					<div style="position: absolute; inset: 0; z-index: 0">
+						<sc-for list="{{ layers }}" as="layer" hint-placeholder-count="5">
+							<div style="{{ layer.style }}">
+								<image-slot
+									id="{{ layer.slotId }}"
+									shape="rect"
+									placeholder="{{ layer.placeholder }}"
+								></image-slot>
+							</div>
+						</sc-for>
+					</div>
+
+					<div
+						style="
+							position: absolute;
+							inset: 0;
+							z-index: 1;
+							pointer-events: none;
+							background: linear-gradient(
+								100deg,
+								rgba(8, 8, 7, 0.88) 0%,
+								rgba(8, 8, 7, 0.62) 34%,
+								rgba(8, 8, 7, 0.12) 62%,
+								rgba(8, 8, 7, 0.35) 100%
+							);
+						"
+					></div>
+					<div
+						style="
+							position: absolute;
+							inset: 0;
+							z-index: 1;
+							pointer-events: none;
+							background: linear-gradient(
+								to bottom,
+								rgba(8, 8, 7, 0.55) 0%,
+								rgba(8, 8, 7, 0) 26%,
+								rgba(8, 8, 7, 0) 55%,
+								rgba(8, 8, 7, 0.6) 100%
+							);
+						"
+					></div>
+
+					<header
+						style="
+							position: relative;
+							z-index: 40;
+							display: flex;
+							align-items: center;
+							justify-content: space-between;
+							gap: 24px;
+							padding: clamp(14px, 2.4vh, 26px) clamp(20px, 4vw, 58px)
+								clamp(12px, 1.8vh, 18px);
+							border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+						"
+					>
+						<a
+							href="./Destination%20Slider.dc.html"
+							style="display: flex; align-items: center; gap: 12px"
+						>
+							<div
+								style="
+									width: 54px;
+									height: 54px;
+									border-radius: 50%;
+									background: #f0a623;
+									display: flex;
+									align-items: center;
+									justify-content: center;
+									flex: none;
+								"
+							>
+								<span
+									style="
+										font-family: Oswald, sans-serif;
+										font-weight: 700;
+										font-size: 22px;
+										color: #12110f;
+										letter-spacing: -0.5px;
+									"
+									>M</span
+								>
+							</div>
+							<span
+								style="
+									font-family: Oswald, sans-serif;
+									font-weight: 700;
+									font-size: 30px;
+									letter-spacing: 2px;
+									color: #fff;
+									text-transform: uppercase;
+								"
+								>Maroa<span style="color: #f0a623">.</span></span
+							>
+						</a>
+						<button
+							type="button"
+							onClick="{{ toggleMenu }}"
+							style="{{ burgerStyle }}"
+						>
+							{{ menuGlyph }}
+						</button>
+						<nav style="{{ navStyle }}">
+							<a
+								href="./Destination%20Slider.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 13px;
+									letter-spacing: 1.6px;
+									text-transform: uppercase;
+									color: #f0a623;
+								"
+								>Accueil</a
+							>
+							<a
+								href="./Destinations.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 13px;
+									letter-spacing: 1.6px;
+									text-transform: uppercase;
+									color: rgba(255, 255, 255, 0.82);
+								"
+								>Destinations</a
+							>
+							<a
+								href="./Circuits.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 13px;
+									letter-spacing: 1.6px;
+									text-transform: uppercase;
+									color: rgba(255, 255, 255, 0.82);
+								"
+								>Circuits</a
+							>
+							<a
+								href="./A%20propos.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 13px;
+									letter-spacing: 1.6px;
+									text-transform: uppercase;
+									color: rgba(255, 255, 255, 0.82);
+								"
+								>À propos</a
+							>
+							<a
+								href="./Contact.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 13px;
+									letter-spacing: 1.6px;
+									text-transform: uppercase;
+									color: rgba(255, 255, 255, 0.82);
+								"
+								>Contact</a
+							>
+							<div
+								style="
+									width: 34px;
+									height: 34px;
+									border-radius: 50%;
+									border: 1px solid rgba(255, 255, 255, 0.35);
+									display: flex;
+									align-items: center;
+									justify-content: center;
+									color: #fff;
+									font-size: 14px;
+								"
+							>
+								⌕
+							</div>
+						</nav>
+					</header>
+
+					<main
+						style="
+							position: relative;
+							z-index: 3;
+							flex: 1;
+							display: flex;
+							flex-direction: column;
+							justify-content: flex-end;
+							gap: clamp(14px, 3vh, 56px);
+							padding: clamp(16px, 3vh, 80px) clamp(20px, 4vw, 58px)
+								clamp(18px, 3vh, 40px);
+							min-height: 0;
+						"
+					>
+						<div style="{{ textStyle }}">
+							<div
+								style="
+									display: flex;
+									align-items: center;
+									gap: 12px;
+									margin-bottom: 18px;
+								"
+							>
+								<div
+									style="width: 38px; height: 1px; background: #f0a623"
+								></div>
+								<span
+									style="
+										font-family: Oswald, sans-serif;
+										font-size: 13px;
+										letter-spacing: 3px;
+										text-transform: uppercase;
+										color: #f0a623;
+									"
+									>{{ active.region }}</span
+								>
+							</div>
+							<h1
+								style="
+									margin: 0;
+									font-family: Oswald, sans-serif;
+									font-weight: 700;
+									font-size: min(clamp(34px, 6.4vw, 96px), 9.5vh);
+									line-height: 0.98;
+									letter-spacing: -1px;
+									text-transform: uppercase;
+									color: #fff;
+									max-width: 15ch;
+									text-wrap: balance;
+								"
+							>
+								<span style="display: block">{{ active.l1 }}</span>
+								<span style="display: block; color: #f0a623"
+									>{{ active.l2 }}</span
+								>
+								<span style="display: block">{{ active.l3 }}</span>
+							</h1>
+							<p
+								style="
+									margin: clamp(12px, 2vh, 22px) 0 0;
+									max-width: 46ch;
+									font-size: clamp(15px, 1.2vw, 18px);
+									line-height: 1.65;
+									color: rgba(255, 255, 255, 0.86);
+									text-wrap: pretty;
+								"
+							>
+								{{ active.text }}
+							</p>
+							<a
+								href="./Circuits.dc.html"
+								style="
+									display: inline-flex;
+									align-items: center;
+									gap: 12px;
+									margin-top: clamp(16px, 2.6vh, 30px);
+									padding: clamp(11px, 1.6vh, 15px) 34px;
+									border: 1px solid #f0a623;
+									border-radius: 999px;
+									font-family: Oswald, sans-serif;
+									font-size: 13px;
+									letter-spacing: 2.4px;
+									text-transform: uppercase;
+									color: #f0a623;
+									cursor: pointer;
+									transition:
+										background 0.3s,
+										color 0.3s;
+								"
+								style-hover="background:#f0a623;color:#12110f"
+								>Découvrir le circuit</a
+							>
+						</div>
+
+						<div
+							style="
+								display: flex;
+								align-items: flex-end;
+								justify-content: space-between;
+								gap: 28px;
+								flex-wrap: wrap;
+							"
+						>
+							<div style="display: flex; align-items: center; gap: 18px">
+								<div style="display: flex; gap: 10px">
+									<button
+										type="button"
+										onClick="{{ prev }}"
+										style="
+											width: 44px;
+											height: 44px;
+											border-radius: 50%;
+											border: 1px solid rgba(255, 255, 255, 0.4);
+											background: rgba(12, 11, 10, 0.35);
+											color: #fff;
+											font-size: 16px;
+											cursor: pointer;
+											transition:
+												background 0.25s,
+												border-color 0.25s;
+										"
+										style-hover="background:#f0a623;border-color:#f0a623;color:#12110f"
+									>
+										‹
+									</button>
+									<button
+										type="button"
+										onClick="{{ next }}"
+										style="
+											width: 44px;
+											height: 44px;
+											border-radius: 50%;
+											border: 1px solid rgba(255, 255, 255, 0.4);
+											background: rgba(12, 11, 10, 0.35);
+											color: #fff;
+											font-size: 16px;
+											cursor: pointer;
+											transition:
+												background 0.25s,
+												border-color 0.25s;
+										"
+										style-hover="background:#f0a623;border-color:#f0a623;color:#12110f"
+									>
+										›
+									</button>
+								</div>
+								<span
+									style="
+										font-family: Oswald, sans-serif;
+										font-size: 13px;
+										letter-spacing: 2px;
+										color: rgba(255, 255, 255, 0.65);
+									"
+									>{{ counter }}</span
+								>
+								<span
+									style="
+										display: flex;
+										align-items: center;
+										gap: 8px;
+										font-family: Oswald, sans-serif;
+										font-size: 11px;
+										letter-spacing: 2px;
+										text-transform: uppercase;
+										color: rgba(255, 255, 255, 0.45);
+									"
+								>
+									<span style="animation: bob 2.4s ease-in-out infinite"
+										>↓</span
+									>
+									Faire défiler
+								</span>
+							</div>
+
+							<div
+								style="
+									display: flex;
+									gap: clamp(8px, 1vw, 14px);
+									flex-wrap: wrap;
+									justify-content: flex-end;
+								"
+							>
+								<sc-for
+									list="{{ upcoming }}"
+									as="thumb"
+									hint-placeholder-count="4"
+								>
+									<div
+										onClick="{{ thumb.onSelect }}"
+										style="
+											position: relative;
+											width: clamp(104px, 13vw, 168px);
+											height: min(clamp(80px, 11vw, 138px), 16vh);
+											border: 3px solid rgba(255, 255, 255, 0.9);
+											border-radius: 3px;
+											overflow: hidden;
+											cursor: pointer;
+											flex: none;
+											transition:
+												transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+												box-shadow 0.35s;
+										"
+										style-hover="transform:translateY(-8px) scale(1.03);box-shadow:0 18px 40px rgba(0,0,0,0.45)"
+									>
+										<image-slot
+											id="{{ thumb.slotId }}"
+											shape="rect"
+											placeholder="{{ thumb.name }}"
+										></image-slot>
+										<div
+											style="
+												position: absolute;
+												inset: auto 0 0 0;
+												pointer-events: none;
+												padding: 18px 10px 8px;
+												background: linear-gradient(
+													to top,
+													rgba(8, 8, 7, 0.85),
+													rgba(8, 8, 7, 0)
+												);
+												font-family: Oswald, sans-serif;
+												font-size: 11px;
+												letter-spacing: 1.4px;
+												text-transform: uppercase;
+												color: #fff;
+											"
+										>
+											{{ thumb.name }}
+										</div>
+									</div>
+								</sc-for>
+							</div>
+						</div>
+					</main>
+				</section>
+
+				<section
+					id="apropos"
+					data-screen-label="Accueil — À propos"
+					style="
+						background: #f4efe6;
+						color: #1b1917;
+						padding: clamp(56px, 9vw, 120px) clamp(20px, 4vw, 58px);
+					"
+				>
+					<div
+						style="
+							max-width: 1240px;
+							margin: 0 auto;
+							display: grid;
+							grid-template-columns: repeat(
+								auto-fit,
+								minmax(min(100%, 320px), 1fr)
+							);
+							gap: clamp(32px, 5vw, 80px);
+							align-items: center;
+						"
+					>
+						<div>
+							<div
+								style="
+									display: flex;
+									align-items: center;
+									gap: 12px;
+									margin-bottom: 20px;
+								"
+							>
+								<div
+									style="width: 38px; height: 1px; background: #b9791a"
+								></div>
+								<span
+									style="
+										font-family: Oswald, sans-serif;
+										font-size: 12px;
+										letter-spacing: 3px;
+										text-transform: uppercase;
+										color: #b9791a;
+									"
+									>Agence locale · Antananarivo</span
+								>
+							</div>
+							<h2
+								style="
+									margin: 0;
+									font-family: Oswald, sans-serif;
+									font-weight: 600;
+									font-size: clamp(30px, 3.6vw, 52px);
+									line-height: 1.05;
+									text-transform: uppercase;
+									letter-spacing: -0.5px;
+									max-width: 22ch;
+									text-wrap: balance;
+								"
+							>
+								Des voyages écrits par ceux qui vivent ici
+							</h2>
+							<p
+								style="
+									margin: 22px 0 0;
+									max-width: 52ch;
+									font-size: 17px;
+									line-height: 1.7;
+									color: #4a443d;
+									text-wrap: pretty;
+								"
+							>
+								Nous sommes une équipe de onze guides, chauffeurs et cuisiniers
+								malgaches. Pas de bus climatisé ni d'itinéraire copié : chaque
+								circuit se construit avec vous, village par village, au rythme
+								des saisons et des marées.
+							</p>
+							<div
+								style="
+									display: flex;
+									gap: clamp(24px, 4vw, 56px);
+									flex-wrap: wrap;
+									margin-top: clamp(28px, 4vw, 44px);
+								"
+							>
+								<div>
+									<div
+										style="
+											font-family: Oswald, sans-serif;
+											font-weight: 700;
+											font-size: 44px;
+											line-height: 1;
+											color: #1b1917;
+										"
+									>
+										14
+									</div>
+									<div
+										style="
+											margin-top: 8px;
+											font-family: Oswald, sans-serif;
+											font-size: 11px;
+											letter-spacing: 2px;
+											text-transform: uppercase;
+											color: #8b8175;
+										"
+									>
+										Années sur le terrain
+									</div>
+								</div>
+								<div>
+									<div
+										style="
+											font-family: Oswald, sans-serif;
+											font-weight: 700;
+											font-size: 44px;
+											line-height: 1;
+											color: #1b1917;
+										"
+									>
+										32
+									</div>
+									<div
+										style="
+											margin-top: 8px;
+											font-family: Oswald, sans-serif;
+											font-size: 11px;
+											letter-spacing: 2px;
+											text-transform: uppercase;
+											color: #8b8175;
+										"
+									>
+										Villages partenaires
+									</div>
+								</div>
+								<div>
+									<div
+										style="
+											font-family: Oswald, sans-serif;
+											font-weight: 700;
+											font-size: 44px;
+											line-height: 1;
+											color: #1b1917;
+										"
+									>
+										6
+									</div>
+									<div
+										style="
+											margin-top: 8px;
+											font-family: Oswald, sans-serif;
+											font-size: 11px;
+											letter-spacing: 2px;
+											text-transform: uppercase;
+											color: #8b8175;
+										"
+									>
+										Voyageurs par groupe
+									</div>
+								</div>
+							</div>
+						</div>
+						<div
+							style="
+								display: grid;
+								grid-template-columns: 1fr 1fr;
+								grid-template-rows: 180px 180px;
+								gap: 14px;
+							"
+						>
+							<div
+								style="
+									grid-row: span 2;
+									border-radius: 4px;
+									overflow: hidden;
+									background: #e2dacd;
+								"
+							>
+								<image-slot
+									id="home-about-1"
+									shape="rect"
+									placeholder="Guide en forêt — portrait vertical"
+								></image-slot>
+							</div>
+							<div
+								style="
+									border-radius: 4px;
+									overflow: hidden;
+									background: #e2dacd;
+								"
+							>
+								<image-slot
+									id="home-about-2"
+									shape="rect"
+									placeholder="Repas partagé au campement"
+								></image-slot>
+							</div>
+							<div
+								style="
+									border-radius: 4px;
+									overflow: hidden;
+									background: #e2dacd;
+								"
+							>
+								<image-slot
+									id="home-about-3"
+									shape="rect"
+									placeholder="Piste de terre rouge en 4x4"
+								></image-slot>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section
+					data-screen-label="Accueil — Destinations phares"
+					style="
+						background: #0c0b0a;
+						padding: clamp(56px, 9vw, 120px) clamp(20px, 4vw, 58px);
+					"
+				>
+					<div style="max-width: 1240px; margin: 0 auto">
+						<div
+							style="
+								display: flex;
+								align-items: flex-end;
+								justify-content: space-between;
+								gap: 28px;
+								flex-wrap: wrap;
+								margin-bottom: clamp(28px, 4vw, 52px);
+							"
+						>
+							<div>
+								<div
+									style="
+										display: flex;
+										align-items: center;
+										gap: 12px;
+										margin-bottom: 16px;
+									"
+								>
+									<div
+										style="width: 38px; height: 1px; background: #f0a623"
+									></div>
+									<span
+										style="
+											font-family: Oswald, sans-serif;
+											font-size: 12px;
+											letter-spacing: 3px;
+											text-transform: uppercase;
+											color: #f0a623;
+										"
+										>Où aller</span
+									>
+								</div>
+								<h2
+									style="
+										margin: 0;
+										font-family: Oswald, sans-serif;
+										font-weight: 600;
+										font-size: clamp(28px, 3.4vw, 50px);
+										line-height: 1.05;
+										text-transform: uppercase;
+										color: #fff;
+									"
+								>
+									Quatre terrains<br />qui ne se ressemblent pas
+								</h2>
+							</div>
+							<a
+								href="./Destinations.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 12px;
+									letter-spacing: 2.4px;
+									text-transform: uppercase;
+									border-bottom: 1px solid #f0a623;
+									padding-bottom: 6px;
+								"
+								>Voir les 12 destinations →</a
+							>
+						</div>
+
+						<div
+							style="
+								display: grid;
+								grid-template-columns: repeat(
+									auto-fit,
+									minmax(min(100%, 250px), 1fr)
+								);
+								gap: 16px;
+							"
+						>
+							<a
+								href="./Destinations.dc.html"
+								style="
+									position: relative;
+									display: block;
+									height: clamp(300px, 34vw, 420px);
+									overflow: hidden;
+									border-radius: 4px;
+									color: #fff;
+								"
+							>
+								<div
+									style="
+										position: absolute;
+										inset: 0;
+										transition: transform 0.8s cubic-bezier(0.16, 0.84, 0.24, 1);
+									"
+									style-hover="transform:scale(1.07)"
+								>
+									<image-slot
+										id="thumb-baobabs"
+										shape="rect"
+										placeholder="Allée des Baobabs"
+									></image-slot>
+								</div>
+								<div
+									style="
+										position: absolute;
+										inset: 0;
+										background: linear-gradient(
+											to top,
+											rgba(8, 8, 7, 0.86) 0%,
+											rgba(8, 8, 7, 0.1) 62%
+										);
+									"
+								></div>
+								<div
+									style="
+										position: absolute;
+										inset: auto 0 0 0;
+										padding: 26px 22px;
+									"
+								>
+									<div
+										style="
+											font-family: Oswald, sans-serif;
+											font-size: 11px;
+											letter-spacing: 2px;
+											text-transform: uppercase;
+											color: #f0a623;
+										"
+									>
+										Menabe
+									</div>
+									<div
+										style="
+											margin-top: 8px;
+											font-family: Oswald, sans-serif;
+											font-weight: 600;
+											font-size: 24px;
+											text-transform: uppercase;
+											line-height: 1.1;
+										"
+									>
+										Allée des Baobabs
+									</div>
+									<div
+										style="
+											margin-top: 10px;
+											font-size: 14px;
+											line-height: 1.55;
+											color: rgba(255, 255, 255, 0.78);
+										"
+									>
+										Coucher de soleil sur la piste de Morondava.
+									</div>
+								</div>
+							</a>
+							<a
+								href="./Destinations.dc.html"
+								style="
+									position: relative;
+									display: block;
+									height: clamp(300px, 34vw, 420px);
+									overflow: hidden;
+									border-radius: 4px;
+									color: #fff;
+								"
+							>
+								<div
+									style="
+										position: absolute;
+										inset: 0;
+										transition: transform 0.8s cubic-bezier(0.16, 0.84, 0.24, 1);
+									"
+									style-hover="transform:scale(1.07)"
+								>
+									<image-slot
+										id="thumb-tsingy"
+										shape="rect"
+										placeholder="Tsingy de Bemaraha"
+									></image-slot>
+								</div>
+								<div
+									style="
+										position: absolute;
+										inset: 0;
+										background: linear-gradient(
+											to top,
+											rgba(8, 8, 7, 0.86) 0%,
+											rgba(8, 8, 7, 0.1) 62%
+										);
+									"
+								></div>
+								<div
+									style="
+										position: absolute;
+										inset: auto 0 0 0;
+										padding: 26px 22px;
+									"
+								>
+									<div
+										style="
+											font-family: Oswald, sans-serif;
+											font-size: 11px;
+											letter-spacing: 2px;
+											text-transform: uppercase;
+											color: #f0a623;
+										"
+									>
+										Melaky
+									</div>
+									<div
+										style="
+											margin-top: 8px;
+											font-family: Oswald, sans-serif;
+											font-weight: 600;
+											font-size: 24px;
+											text-transform: uppercase;
+											line-height: 1.1;
+										"
+									>
+										Tsingy de Bemaraha
+									</div>
+									<div
+										style="
+											margin-top: 10px;
+											font-size: 14px;
+											line-height: 1.55;
+											color: rgba(255, 255, 255, 0.78);
+										"
+									>
+										Deux jours dans un labyrinthe de calcaire.
+									</div>
+								</div>
+							</a>
+							<a
+								href="./Destinations.dc.html"
+								style="
+									position: relative;
+									display: block;
+									height: clamp(300px, 34vw, 420px);
+									overflow: hidden;
+									border-radius: 4px;
+									color: #fff;
+								"
+							>
+								<div
+									style="
+										position: absolute;
+										inset: 0;
+										transition: transform 0.8s cubic-bezier(0.16, 0.84, 0.24, 1);
+									"
+									style-hover="transform:scale(1.07)"
+								>
+									<image-slot
+										id="thumb-nosyiranja"
+										shape="rect"
+										placeholder="Nosy Iranja"
+									></image-slot>
+								</div>
+								<div
+									style="
+										position: absolute;
+										inset: 0;
+										background: linear-gradient(
+											to top,
+											rgba(8, 8, 7, 0.86) 0%,
+											rgba(8, 8, 7, 0.1) 62%
+										);
+									"
+								></div>
+								<div
+									style="
+										position: absolute;
+										inset: auto 0 0 0;
+										padding: 26px 22px;
+									"
+								>
+									<div
+										style="
+											font-family: Oswald, sans-serif;
+											font-size: 11px;
+											letter-spacing: 2px;
+											text-transform: uppercase;
+											color: #f0a623;
+										"
+									>
+										Diana
+									</div>
+									<div
+										style="
+											margin-top: 8px;
+											font-family: Oswald, sans-serif;
+											font-weight: 600;
+											font-size: 24px;
+											text-transform: uppercase;
+											line-height: 1.1;
+										"
+									>
+										Nosy Iranja
+									</div>
+									<div
+										style="
+											margin-top: 10px;
+											font-size: 14px;
+											line-height: 1.55;
+											color: rgba(255, 255, 255, 0.78);
+										"
+									>
+										Un banc de sable entre deux îlots.
+									</div>
+								</div>
+							</a>
+							<a
+								href="./Destinations.dc.html"
+								style="
+									position: relative;
+									display: block;
+									height: clamp(300px, 34vw, 420px);
+									overflow: hidden;
+									border-radius: 4px;
+									color: #fff;
+								"
+							>
+								<div
+									style="
+										position: absolute;
+										inset: 0;
+										transition: transform 0.8s cubic-bezier(0.16, 0.84, 0.24, 1);
+									"
+									style-hover="transform:scale(1.07)"
+								>
+									<image-slot
+										id="thumb-isalo"
+										shape="rect"
+										placeholder="Massif de l’Isalo"
+									></image-slot>
+								</div>
+								<div
+									style="
+										position: absolute;
+										inset: 0;
+										background: linear-gradient(
+											to top,
+											rgba(8, 8, 7, 0.86) 0%,
+											rgba(8, 8, 7, 0.1) 62%
+										);
+									"
+								></div>
+								<div
+									style="
+										position: absolute;
+										inset: auto 0 0 0;
+										padding: 26px 22px;
+									"
+								>
+									<div
+										style="
+											font-family: Oswald, sans-serif;
+											font-size: 11px;
+											letter-spacing: 2px;
+											text-transform: uppercase;
+											color: #f0a623;
+										"
+									>
+										Ihorombe
+									</div>
+									<div
+										style="
+											margin-top: 8px;
+											font-family: Oswald, sans-serif;
+											font-weight: 600;
+											font-size: 24px;
+											text-transform: uppercase;
+											line-height: 1.1;
+										"
+									>
+										Massif de l’Isalo
+									</div>
+									<div
+										style="
+											margin-top: 10px;
+											font-size: 14px;
+											line-height: 1.55;
+											color: rgba(255, 255, 255, 0.78);
+										"
+									>
+										Canyons de grès et piscines naturelles.
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<section
+					data-screen-label="Accueil — Circuits"
+					style="
+						background: #f4efe6;
+						color: #1b1917;
+						padding: clamp(56px, 9vw, 120px) clamp(20px, 4vw, 58px);
+					"
+				>
+					<div style="max-width: 1240px; margin: 0 auto">
+						<div
+							style="
+								display: flex;
+								align-items: flex-end;
+								justify-content: space-between;
+								gap: 28px;
+								flex-wrap: wrap;
+								margin-bottom: clamp(28px, 4vw, 52px);
+							"
+						>
+							<div>
+								<div
+									style="
+										display: flex;
+										align-items: center;
+										gap: 12px;
+										margin-bottom: 16px;
+									"
+								>
+									<div
+										style="width: 38px; height: 1px; background: #b9791a"
+									></div>
+									<span
+										style="
+											font-family: Oswald, sans-serif;
+											font-size: 12px;
+											letter-spacing: 3px;
+											text-transform: uppercase;
+											color: #b9791a;
+										"
+										>Voyages guidés</span
+									>
+								</div>
+								<h2
+									style="
+										margin: 0;
+										font-family: Oswald, sans-serif;
+										font-weight: 600;
+										font-size: clamp(28px, 3.4vw, 50px);
+										line-height: 1.05;
+										text-transform: uppercase;
+									"
+								>
+									Trois circuits signature
+								</h2>
+							</div>
+							<a
+								href="./Circuits.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 12px;
+									letter-spacing: 2.4px;
+									text-transform: uppercase;
+									color: #b9791a;
+									border-bottom: 1px solid #b9791a;
+									padding-bottom: 6px;
+								"
+								>Tous les circuits →</a
+							>
+						</div>
+
+						<div
+							style="
+								display: grid;
+								grid-template-columns: repeat(
+									auto-fit,
+									minmax(min(100%, 290px), 1fr)
+								);
+								gap: clamp(16px, 2vw, 28px);
+							"
+						>
+							<a
+								href="./Circuits.dc.html"
+								style="
+									display: flex;
+									flex-direction: column;
+									background: #fff;
+									border-radius: 5px;
+									overflow: hidden;
+									color: #1b1917;
+									box-shadow: 0 2px 0 rgba(27, 25, 23, 0.06);
+									transition:
+										transform 0.35s,
+										box-shadow 0.35s;
+								"
+								style-hover="transform:translateY(-6px);box-shadow:0 22px 44px rgba(27,25,23,0.16)"
+							>
+								<div style="height: 220px; background: #e2dacd">
+									<image-slot
+										id="tour-ouest"
+										shape="rect"
+										placeholder="Piste de l’Ouest — 4x4 et baobabs"
+									></image-slot>
+								</div>
+								<div
+									style="
+										padding: 26px 24px 28px;
+										display: flex;
+										flex-direction: column;
+										gap: 14px;
+										flex: 1;
+									"
+								>
+									<div
+										style="
+											display: flex;
+											gap: 14px;
+											font-family: Oswald, sans-serif;
+											font-size: 11px;
+											letter-spacing: 2px;
+											text-transform: uppercase;
+											color: #8b8175;
+										"
+									>
+										<span>9 jours</span><span>·</span><span>Ouest</span
+										><span>·</span><span>Modéré</span>
+									</div>
+									<h3
+										style="
+											margin: 0;
+											font-family: Oswald, sans-serif;
+											font-weight: 600;
+											font-size: 23px;
+											text-transform: uppercase;
+											line-height: 1.15;
+										"
+									>
+										La piste des baobabs
+									</h3>
+									<p
+										style="
+											margin: 0;
+											font-size: 15px;
+											line-height: 1.65;
+											color: #4a443d;
+											flex: 1;
+											text-wrap: pretty;
+										"
+									>
+										Antananarivo, Miandrivazo en pirogue, Tsingy, Morondava. Le
+										grand ouest sec, ses forêts sèches et ses pistes rouges.
+									</p>
+									<div
+										style="
+											display: flex;
+											align-items: baseline;
+											justify-content: space-between;
+											border-top: 1px solid #ece5d9;
+											padding-top: 16px;
+										"
+									>
+										<span
+											style="
+												font-family: Oswald, sans-serif;
+												font-weight: 600;
+												font-size: 20px;
+											"
+											>1 840 €</span
+										>
+										<span
+											style="
+												font-family: Oswald, sans-serif;
+												font-size: 11px;
+												letter-spacing: 2px;
+												text-transform: uppercase;
+												color: #b9791a;
+											"
+											>Voir le détail →</span
+										>
+									</div>
+								</div>
+							</a>
+							<a
+								href="./Circuits.dc.html"
+								style="
+									display: flex;
+									flex-direction: column;
+									background: #fff;
+									border-radius: 5px;
+									overflow: hidden;
+									color: #1b1917;
+									box-shadow: 0 2px 0 rgba(27, 25, 23, 0.06);
+									transition:
+										transform 0.35s,
+										box-shadow 0.35s;
+								"
+								style-hover="transform:translateY(-6px);box-shadow:0 22px 44px rgba(27,25,23,0.16)"
+							>
+								<div style="height: 220px; background: #e2dacd">
+									<image-slot
+										id="tour-sud"
+										shape="rect"
+										placeholder="Route du Sud — Isalo, Anja"
+									></image-slot>
+								</div>
+								<div
+									style="
+										padding: 26px 24px 28px;
+										display: flex;
+										flex-direction: column;
+										gap: 14px;
+										flex: 1;
+									"
+								>
+									<div
+										style="
+											display: flex;
+											gap: 14px;
+											font-family: Oswald, sans-serif;
+											font-size: 11px;
+											letter-spacing: 2px;
+											text-transform: uppercase;
+											color: #8b8175;
+										"
+									>
+										<span>12 jours</span><span>·</span><span>Sud</span
+										><span>·</span><span>Sportif</span>
+									</div>
+									<h3
+										style="
+											margin: 0;
+											font-family: Oswald, sans-serif;
+											font-weight: 600;
+											font-size: 23px;
+											text-transform: uppercase;
+											line-height: 1.15;
+										"
+									>
+										Hauts plateaux &amp; canyons
+									</h3>
+									<p
+										style="
+											margin: 0;
+											font-size: 15px;
+											line-height: 1.65;
+											color: #4a443d;
+											flex: 1;
+											text-wrap: pretty;
+										"
+									>
+										Ambalavao, lémuriens d'Anja, trois jours de marche dans
+										l'Isalo, puis les lagons d'Ifaty pour finir à plat.
+									</p>
+									<div
+										style="
+											display: flex;
+											align-items: baseline;
+											justify-content: space-between;
+											border-top: 1px solid #ece5d9;
+											padding-top: 16px;
+										"
+									>
+										<span
+											style="
+												font-family: Oswald, sans-serif;
+												font-weight: 600;
+												font-size: 20px;
+											"
+											>2 260 €</span
+										>
+										<span
+											style="
+												font-family: Oswald, sans-serif;
+												font-size: 11px;
+												letter-spacing: 2px;
+												text-transform: uppercase;
+												color: #b9791a;
+											"
+											>Voir le détail →</span
+										>
+									</div>
+								</div>
+							</a>
+							<a
+								href="./Circuits.dc.html"
+								style="
+									display: flex;
+									flex-direction: column;
+									background: #fff;
+									border-radius: 5px;
+									overflow: hidden;
+									color: #1b1917;
+									box-shadow: 0 2px 0 rgba(27, 25, 23, 0.06);
+									transition:
+										transform 0.35s,
+										box-shadow 0.35s;
+								"
+								style-hover="transform:translateY(-6px);box-shadow:0 22px 44px rgba(27,25,23,0.16)"
+							>
+								<div style="height: 220px; background: #e2dacd">
+									<image-slot
+										id="tour-nord"
+										shape="rect"
+										placeholder="Nord — Nosy Be, Iranja"
+									></image-slot>
+								</div>
+								<div
+									style="
+										padding: 26px 24px 28px;
+										display: flex;
+										flex-direction: column;
+										gap: 14px;
+										flex: 1;
+									"
+								>
+									<div
+										style="
+											display: flex;
+											gap: 14px;
+											font-family: Oswald, sans-serif;
+											font-size: 11px;
+											letter-spacing: 2px;
+											text-transform: uppercase;
+											color: #8b8175;
+										"
+									>
+										<span>7 jours</span><span>·</span><span>Nord</span
+										><span>·</span><span>Facile</span>
+									</div>
+									<h3
+										style="
+											margin: 0;
+											font-family: Oswald, sans-serif;
+											font-weight: 600;
+											font-size: 23px;
+											text-transform: uppercase;
+											line-height: 1.15;
+										"
+									>
+										Archipel du nord
+									</h3>
+									<p
+										style="
+											margin: 0;
+											font-size: 15px;
+											line-height: 1.65;
+											color: #4a443d;
+											flex: 1;
+											text-wrap: pretty;
+										"
+									>
+										Nosy Be comme camp de base, Iranja et Sakatia en boutre,
+										plongée sur le récif et nuits chez les pêcheurs.
+									</p>
+									<div
+										style="
+											display: flex;
+											align-items: baseline;
+											justify-content: space-between;
+											border-top: 1px solid #ece5d9;
+											padding-top: 16px;
+										"
+									>
+										<span
+											style="
+												font-family: Oswald, sans-serif;
+												font-weight: 600;
+												font-size: 20px;
+											"
+											>1 490 €</span
+										>
+										<span
+											style="
+												font-family: Oswald, sans-serif;
+												font-size: 11px;
+												letter-spacing: 2px;
+												text-transform: uppercase;
+												color: #b9791a;
+											"
+											>Voir le détail →</span
+										>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<section
+					data-screen-label="Accueil — Témoignage"
+					style="
+						position: relative;
+						background: #0c0b0a;
+						padding: clamp(56px, 9vw, 120px) clamp(20px, 4vw, 58px);
+					"
+				>
+					<div
+						style="
+							max-width: 980px;
+							margin: 0 auto;
+							display: flex;
+							gap: clamp(24px, 4vw, 48px);
+							align-items: center;
+							flex-wrap: wrap;
+						"
+					>
+						<div
+							style="
+								width: 120px;
+								height: 120px;
+								border-radius: 50%;
+								overflow: hidden;
+								flex: none;
+								background: #1c1a17;
+							"
+						>
+							<image-slot
+								id="home-quote-portrait"
+								shape="circle"
+								placeholder="Portrait voyageuse"
+							></image-slot>
+						</div>
+						<div style="flex: 1; min-width: 260px">
+							<div
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 56px;
+									line-height: 0.6;
+									color: #f0a623;
+								"
+							>
+								“
+							</div>
+							<p
+								style="
+									margin: 14px 0 0;
+									font-family: Oswald, sans-serif;
+									font-weight: 400;
+									font-size: clamp(20px, 2.2vw, 30px);
+									line-height: 1.4;
+									color: #fff;
+									text-wrap: pretty;
+								"
+							>
+								Rivo a changé notre itinéraire au troisième jour parce que la
+								mer était mauvaise. On a dormi dans son village. C'est devenu le
+								meilleur souvenir du voyage.
+							</p>
+							<div
+								style="
+									margin-top: 20px;
+									font-family: Oswald, sans-serif;
+									font-size: 12px;
+									letter-spacing: 2px;
+									text-transform: uppercase;
+									color: rgba(255, 255, 255, 0.55);
+								"
+							>
+								Claire &amp; Damien — Circuit Nord, juillet
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section
+					id="contact"
+					data-screen-label="Accueil — Contact"
+					style="
+						position: relative;
+						overflow: hidden;
+						background: #12110f;
+						padding: clamp(56px, 9vw, 110px) clamp(20px, 4vw, 58px);
+					"
+				>
+					<div style="position: absolute; inset: 0; opacity: 0.26">
+						<image-slot
+							id="home-cta-bg"
+							shape="rect"
+							placeholder="Photo large — lagon ou piste au crépuscule"
+						></image-slot>
+					</div>
+					<div
+						style="
+							position: absolute;
+							inset: 0;
+							background: linear-gradient(
+								to right,
+								rgba(18, 17, 15, 0.94),
+								rgba(18, 17, 15, 0.6)
+							);
+						"
+					></div>
+					<div
+						style="
+							position: relative;
+							max-width: 1240px;
+							margin: 0 auto;
+							display: grid;
+							grid-template-columns: repeat(
+								auto-fit,
+								minmax(min(100%, 300px), 1fr)
+							);
+							gap: clamp(32px, 5vw, 72px);
+							align-items: center;
+						"
+					>
+						<div>
+							<h2
+								style="
+									margin: 0;
+									font-family: Oswald, sans-serif;
+									font-weight: 700;
+									font-size: clamp(30px, 3.8vw, 56px);
+									line-height: 1.02;
+									text-transform: uppercase;
+									color: #fff;
+									max-width: 20ch;
+									text-wrap: balance;
+								"
+							>
+								Dites-nous quand vous partez
+							</h2>
+							<p
+								style="
+									margin: 20px 0 0;
+									max-width: 44ch;
+									font-size: 17px;
+									line-height: 1.7;
+									color: rgba(255, 255, 255, 0.78);
+								"
+							>
+								Nous répondons en 48 h avec une première proposition
+								d'itinéraire, sans engagement.
+							</p>
+							<div
+								style="
+									display: flex;
+									gap: 28px;
+									flex-wrap: wrap;
+									margin-top: 28px;
+									font-family: Oswald, sans-serif;
+									font-size: 12px;
+									letter-spacing: 2px;
+									text-transform: uppercase;
+									color: rgba(255, 255, 255, 0.6);
+								"
+							>
+								<span>+261 34 12 345 67</span><span>bonjour@maroa.mg</span>
+							</div>
+						</div>
+						<form
+							style="display: flex; flex-direction: column; gap: 14px"
+							onSubmit="{{ onSubmit }}"
+						>
+							<div
+								style="
+									display: grid;
+									grid-template-columns: repeat(
+										auto-fit,
+										minmax(min(100%, 150px), 1fr)
+									);
+									gap: 14px;
+								"
+							>
+								<input
+									type="text"
+									placeholder="Votre nom"
+									style="
+										padding: 15px 18px;
+										background: rgba(255, 255, 255, 0.06);
+										border: 1px solid rgba(255, 255, 255, 0.22);
+										border-radius: 3px;
+										color: #fff;
+										font-family: Barlow, sans-serif;
+										font-size: 15px;
+										outline: none;
+									"
+									style-focus="border-color:#f0a623"
+								/>
+								<input
+									type="email"
+									placeholder="E-mail"
+									style="
+										padding: 15px 18px;
+										background: rgba(255, 255, 255, 0.06);
+										border: 1px solid rgba(255, 255, 255, 0.22);
+										border-radius: 3px;
+										color: #fff;
+										font-family: Barlow, sans-serif;
+										font-size: 15px;
+										outline: none;
+									"
+									style-focus="border-color:#f0a623"
+								/>
+							</div>
+							<input
+								type="text"
+								placeholder="Destination ou circuit envisagé"
+								style="
+									padding: 15px 18px;
+									background: rgba(255, 255, 255, 0.06);
+									border: 1px solid rgba(255, 255, 255, 0.22);
+									border-radius: 3px;
+									color: #fff;
+									font-family: Barlow, sans-serif;
+									font-size: 15px;
+									outline: none;
+								"
+								style-focus="border-color:#f0a623"
+							/>
+							<textarea
+								rows="3"
+								placeholder="Dates, nombre de voyageurs, envies…"
+								style="
+									padding: 15px 18px;
+									background: rgba(255, 255, 255, 0.06);
+									border: 1px solid rgba(255, 255, 255, 0.22);
+									border-radius: 3px;
+									color: #fff;
+									font-family: Barlow, sans-serif;
+									font-size: 15px;
+									resize: vertical;
+									outline: none;
+								"
+								style-focus="border-color:#f0a623"
+							></textarea>
+							<button
+								type="submit"
+								style="
+									margin-top: 4px;
+									padding: 16px 34px;
+									background: #f0a623;
+									border: none;
+									border-radius: 999px;
+									font-family: Oswald, sans-serif;
+									font-size: 13px;
+									letter-spacing: 2.4px;
+									text-transform: uppercase;
+									color: #12110f;
+									cursor: pointer;
+									transition: background 0.3s;
+								"
+								style-hover="background:#ffbe4d"
+							>
+								{{ formLabel }}
+							</button>
+						</form>
+					</div>
+				</section>
+
+				<footer
+					style="
+						background: #0c0b0a;
+						border-top: 1px solid rgba(255, 255, 255, 0.12);
+						padding: clamp(32px, 4vw, 48px) clamp(20px, 4vw, 58px);
+					"
+				>
+					<div
+						style="
+							max-width: 1240px;
+							margin: 0 auto;
+							display: flex;
+							align-items: center;
+							justify-content: space-between;
+							gap: 24px;
+							flex-wrap: wrap;
+						"
+					>
+						<span
+							style="
+								font-family: Oswald, sans-serif;
+								font-weight: 700;
+								font-size: 22px;
+								letter-spacing: 2px;
+								text-transform: uppercase;
+								color: #fff;
+							"
+							>Maroa<span style="color: #f0a623">.</span></span
+						>
+						<nav
+							style="
+								display: flex;
+								gap: clamp(14px, 2vw, 28px);
+								flex-wrap: wrap;
+							"
+						>
+							<a
+								href="./Destinations.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 11px;
+									letter-spacing: 2px;
+									text-transform: uppercase;
+									color: rgba(255, 255, 255, 0.6);
+								"
+								>Destinations</a
+							>
+							<a
+								href="./Circuits.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 11px;
+									letter-spacing: 2px;
+									text-transform: uppercase;
+									color: rgba(255, 255, 255, 0.6);
+								"
+								>Circuits</a
+							>
+							<a
+								href="./A%20propos.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 11px;
+									letter-spacing: 2px;
+									text-transform: uppercase;
+									color: rgba(255, 255, 255, 0.6);
+								"
+								>À propos</a
+							>
+							<a
+								href="./Contact.dc.html"
+								style="
+									font-family: Oswald, sans-serif;
+									font-size: 11px;
+									letter-spacing: 2px;
+									text-transform: uppercase;
+									color: rgba(255, 255, 255, 0.6);
+								"
+								>Contact</a
+							>
+						</nav>
+						<span style="font-size: 13px; color: rgba(255, 255, 255, 0.35)"
+							>© 2026 Maroa Voyages — Antananarivo</span
+						>
+					</div>
+				</footer>
+			</div>
+		</x-dc>
+		<script
+			type="text/x-dc"
+			data-dc-script
+			data-props='{"autoplay":{"editor":"boolean","default":false,"tsType":"boolean","section":"Carrousel"},"zoom":{"editor":"range","default":1.3,"min":1,"max":1.8,"step":0.05,"unit":"×","tsType":"number","section":"Carrousel"}}'
+		>
+			const SLIDES = [
+			  { id: 'baobabs', name: 'Allée des Baobabs', region: 'Menabe · Morondava',
+			    l1: 'Marcher', l2: 'sous les', l3: 'géants',
+			    text: "Vingt-cinq baobabs centenaires bordent la piste de terre rouge. Arrivez une heure avant le coucher du soleil : la lumière fait le reste." },
+			  { id: 'tsingy', name: 'Tsingy de Bemaraha', region: 'Melaky · Bemaraha',
+			    l1: 'Une forêt', l2: 'de pierre', l3: 'coupante',
+			    text: "Passerelles suspendues, canyons calcaires et lémuriens invisibles. Deux jours de randonnée dans un labyrinthe classé au patrimoine mondial." },
+			  { id: 'nosyiranja', name: 'Nosy Iranja', region: 'Diana · Nosy Be',
+			    l1: 'Deux îles', l2: 'un banc', l3: 'de sable',
+			    text: "Une langue de sable blanc relie les deux îlots à marée basse. Pirogue au départ de Nosy Be, masque et tuba dans le sac." },
+			  { id: 'isalo', name: 'Massif de l’Isalo', region: 'Ihorombe · Ranohira',
+			    l1: 'Des canyons', l2: 'et des', l3: 'piscines',
+			    text: "Grès sculpté par le vent, piscines naturelles turquoise et nuits sous les étoiles au cœur du parc national de l’Isalo." },
+			  { id: 'pangalanes', name: 'Canal des Pangalanes', region: 'Atsinanana · Toamasina',
+			    l1: 'Six cents', l2: 'kilomètres', l3: 'd’eau calme',
+			    text: "Un chapelet de lagunes relié par un canal colonial. On y navigue lentement, de village de pêcheurs en forêt littorale." }
+			];
+
+			class Component extends DCLogic {
+			  state = { i: 0, tick: 0, sent: false, narrow: false, menuOpen: false };
+
+			  componentDidMount() {
+			    if (this.props.autoplay) this.timer = setInterval(() => this.go(this.state.i + 1), 7000);
+			    this.mq = window.matchMedia('(max-width: 880px)');
+			    this.onMq = e => this.setState({ narrow: e.matches, menuOpen: false });
+			    this.setState({ narrow: this.mq.matches });
+			    this.mq.addEventListener('change', this.onMq);
+			  }
+			  componentWillUnmount() {
+			    clearInterval(this.timer);
+			    if (this.mq) this.mq.removeEventListener('change', this.onMq);
+			  }
+
+			  navBits() {
+			    const { narrow, menuOpen } = this.state;
+			    return {
+			      navStyle: narrow
+			        ? (menuOpen
+			            ? { position: 'fixed', inset: 0, zIndex: 60, background: 'rgba(10,9,8,0.97)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 30 }
+			            : { display: 'none' })
+			        : { display: 'flex', alignItems: 'center', gap: 'clamp(16px,2.4vw,38px)', flexWrap: 'wrap' },
+			      burgerStyle: {
+			        display: narrow ? 'flex' : 'none', alignItems: 'center', justifyContent: 'center',
+			        position: 'relative', zIndex: 70, width: 46, height: 46, borderRadius: 999,
+			        border: '1px solid rgba(255,255,255,0.32)', background: 'rgba(12,11,10,0.5)',
+			        color: '#fff', fontSize: 20, lineHeight: 1, cursor: 'pointer'
+			      },
+			      menuGlyph: menuOpen ? '✕' : '≡',
+			      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen }))
+			    };
+			  }
+
+
+			  go(n) {
+			    const i = ((n % SLIDES.length) + SLIDES.length) % SLIDES.length;
+			    this.setState(s => ({ i, tick: s.tick + 1 }));
+			  }
+
+			  renderVals() {
+			    const zoom = this.props.zoom ?? 1.3;
+			    const i = this.state.i;
+
+			    const layers = SLIDES.map((s, n) => ({
+			      slotId: 'thumb-' + s.id,
+			      placeholder: s.name + ' — photo plein écran',
+			      style: {
+			        position: 'absolute', inset: 0,
+			        opacity: n === i ? 1 : 0,
+			        visibility: n === i ? 'visible' : 'hidden',
+			        transform: n === i ? 'scale(1)' : 'scale(' + zoom + ')',
+			        transition: 'opacity 1s ease, transform 1.5s cubic-bezier(.16,.84,.24,1), visibility 1s',
+			        willChange: 'transform, opacity'
+			      }
+			    }));
+
+			    const upcoming = [1, 2, 3, 4].map(k => {
+			      const n = (i + k) % SLIDES.length;
+			      return { name: SLIDES[n].name, slotId: 'thumb-' + SLIDES[n].id, onSelect: () => this.go(n) };
+			    });
+
+			    const pad = n => String(n + 1).padStart(2, '0');
+
+			    return {
+			      ...this.navBits(),
+			      active: SLIDES[i], layers, upcoming,
+			      counter: pad(i) + ' / ' + pad(SLIDES.length - 1),
+			      prev: () => this.go(i - 1),
+			      next: () => this.go(i + 1),
+			      formLabel: this.state.sent ? 'Message envoyé ✓' : 'Demander un itinéraire',
+			      onSubmit: e => { e.preventDefault(); this.setState({ sent: true }); },
+			      textStyle: { animation: (this.state.tick % 2 ? 'riseA' : 'riseB') + ' .9s cubic-bezier(.16,.84,.24,1) both' }
+			    };
+			  }
+			}
+		</script>
+	</body>
+</html>
